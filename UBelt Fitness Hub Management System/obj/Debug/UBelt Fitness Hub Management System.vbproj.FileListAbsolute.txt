@@ -1,0 +1,13 @@
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\UBelt Fitness Hub Management System.exe.config
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.Form1.resources
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.Resources.resources
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.vbproj.GenerateResource.Cache
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\UBelt Fitness Hub Management System.exe
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\UBelt Fitness Hub Management System.pdb
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\UBelt Fitness Hub Management System.xml
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.exe
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.xml
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.pdb
+C:\Users\asus\Documents\Visual Studio 2012\Projects\UBelt Fitness Hub Management System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.Form2.resources

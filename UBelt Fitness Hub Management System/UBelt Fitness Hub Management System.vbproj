@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendance.Designer.vb">
+      <DependentUpon>Attendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conn.vb" />
     <Compile Include="Crud.vb" />
     <Compile Include="frmLogIn.vb">
@@ -87,6 +93,18 @@
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMembers.Designer.vb">
+      <DependentUpon>frmMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMembers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewMember.Designer.vb">
+      <DependentUpon>frmNewMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewMember.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -111,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMembers.resx">
+      <DependentUpon>frmMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewMember.resx">
+      <DependentUpon>frmNewMember.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

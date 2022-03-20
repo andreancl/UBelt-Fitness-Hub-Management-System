@@ -24,3 +24,5 @@ C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.pdb
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmLogIn.resources
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmDashboard.resources
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmMembers.resources
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmNewMember.resources

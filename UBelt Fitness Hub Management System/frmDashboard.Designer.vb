@@ -27,7 +27,6 @@ Partial Class frmDashboard
         Me.lbUBFH = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnBackup = New System.Windows.Forms.Button()
-        Me.btnUser = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnMembers = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
@@ -35,6 +34,7 @@ Partial Class frmDashboard
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblUserName = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnUser = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -98,27 +98,6 @@ Partial Class frmDashboard
         Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBackup.UseVisualStyleBackColor = False
-        '
-        'btnUser
-        '
-        Me.btnUser.BackColor = System.Drawing.Color.Transparent
-        Me.btnUser.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnUser.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.btnUser.FlatAppearance.BorderSize = 0
-        Me.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUser.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUser.ForeColor = System.Drawing.Color.White
-        Me.btnUser.Image = CType(resources.GetObject("btnUser.Image"), System.Drawing.Image)
-        Me.btnUser.Location = New System.Drawing.Point(0, 407)
-        Me.btnUser.Name = "btnUser"
-        Me.btnUser.Padding = New System.Windows.Forms.Padding(0, 0, 50, 0)
-        Me.btnUser.Size = New System.Drawing.Size(256, 50)
-        Me.btnUser.TabIndex = 12
-        Me.btnUser.Text = "   User"
-        Me.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnUser.UseVisualStyleBackColor = False
         '
         'btnLogOut
         '
@@ -224,6 +203,27 @@ Partial Class frmDashboard
         Me.Panel2.Size = New System.Drawing.Size(256, 64)
         Me.Panel2.TabIndex = 0
         '
+        'btnUser
+        '
+        Me.btnUser.BackColor = System.Drawing.Color.Transparent
+        Me.btnUser.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnUser.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.btnUser.FlatAppearance.BorderSize = 0
+        Me.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUser.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUser.ForeColor = System.Drawing.Color.White
+        Me.btnUser.Image = CType(resources.GetObject("btnUser.Image"), System.Drawing.Image)
+        Me.btnUser.Location = New System.Drawing.Point(0, 407)
+        Me.btnUser.Name = "btnUser"
+        Me.btnUser.Padding = New System.Windows.Forms.Padding(0, 0, 50, 0)
+        Me.btnUser.Size = New System.Drawing.Size(256, 50)
+        Me.btnUser.TabIndex = 12
+        Me.btnUser.Text = "  Attendance"
+        Me.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUser.UseVisualStyleBackColor = False
+        '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,8 +232,10 @@ Partial Class frmDashboard
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.IsMdiContainer = True
         Me.Name = "frmDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.TransparencyKey = System.Drawing.SystemColors.Control
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -248,7 +250,6 @@ Partial Class frmDashboard
     Friend WithEvents lbUBFH As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnBackup As System.Windows.Forms.Button
-    Friend WithEvents btnUser As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnMembers As System.Windows.Forms.Button
     Friend WithEvents btnDashboard As System.Windows.Forms.Button
@@ -256,4 +257,5 @@ Partial Class frmDashboard
     Public WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblUserName As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents btnUser As System.Windows.Forms.Button
 End Class

@@ -80,8 +80,14 @@
     <Compile Include="frmAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Conn.vb" />
-    <Compile Include="Crud.vb" />
+    <Compile Include="frmSettings.Designer.vb">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Conn.vb" />
+    <Compile Include="Modules\Crud.vb" />
     <Compile Include="frmLogIn.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,16 +107,16 @@
     <Compile Include="frmMembers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMonthlyMember.Designer.vb">
+    <Compile Include="Pop-ups\frmMonthlyMember.Designer.vb">
       <DependentUpon>frmMonthlyMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMonthlyMember.vb">
+    <Compile Include="Pop-ups\frmMonthlyMember.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNewMember.Designer.vb">
+    <Compile Include="Pop-ups\frmNewMember.Designer.vb">
       <DependentUpon>frmNewMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmNewMember.vb">
+    <Compile Include="Pop-ups\frmNewMember.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -128,10 +134,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="frmDailyMember.Designer.vb">
+    <Compile Include="Pop-ups\frmDailyMember.Designer.vb">
       <DependentUpon>frmDailyMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDailyMember.vb">
+    <Compile Include="Pop-ups\frmDailyMember.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -148,10 +154,13 @@
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMonthlyMember.resx">
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-ups\frmMonthlyMember.resx">
       <DependentUpon>frmMonthlyMember.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNewMember.resx">
+    <EmbeddedResource Include="Pop-ups\frmNewMember.resx">
       <DependentUpon>frmNewMember.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -160,7 +169,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDailyMember.resx">
+    <EmbeddedResource Include="Pop-ups\frmDailyMember.resx">
       <DependentUpon>frmDailyMember.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

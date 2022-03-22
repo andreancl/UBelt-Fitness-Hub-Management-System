@@ -29,3 +29,4 @@ C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmAttendance.resources
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmMonthlyMember.resources
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmdailyMember.resources
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmSettings.resources

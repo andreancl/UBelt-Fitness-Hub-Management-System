@@ -30,21 +30,12 @@
     End Sub
 
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
-        txtMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
-        txtFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
+        frmAttendance.txtMonthlyMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
+        frmAttendance.txtMonthlyFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
     End Sub
 
     Private Sub dgvMemberList_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvMemberList.DoubleClick
-        txtMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
-        txtFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
-    End Sub
-
-    Private Sub btnTimeIn_Click(sender As Object, e As EventArgs) Handles btnTimeIn.Click
-        Dim logdate As String = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
-        Dim login = TimeOfDay
-        query = "INSERT INTO `monthly` (`MemberId`, `FullName`, `Date`, `TimeLogIn`)" _
-        & " VALUES ('" & txtMemberId.Text & "', '" & txtFullName.Text & "'" _
-        & ",'" & logdate & "', '" & login & "')"
-        create(query, txtFullName.Text)
+        frmAttendance.txtMonthlyMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
+        frmAttendance.txtMonthlyFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
     End Sub
 End Class

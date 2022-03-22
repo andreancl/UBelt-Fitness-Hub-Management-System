@@ -46,7 +46,7 @@
     Private Sub frmNewMember_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         setup(gbMembers)
     End Sub
-    Private Sub lblResId_TextChanged(sender As Object, e As EventArgs) Handles lblMemId.TextChanged
+    Private Sub lblMemId_TextChanged(sender As Object, e As EventArgs) Handles lblMemId.TextChanged
         Try
             query = "SELECT * FROM `members` WHERE `MemberId`='" & lblMemId.Text & "'"
             reloadtxt(query)

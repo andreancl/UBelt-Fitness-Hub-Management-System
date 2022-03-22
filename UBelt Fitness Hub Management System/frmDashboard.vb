@@ -14,4 +14,9 @@ Public Class frmDashboard
         closeChildForm()
         showForm(frmAttendance)
     End Sub
+
+    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
+        closeChildForm()
+        showForm(frmSettings)
+    End Sub
 End Class

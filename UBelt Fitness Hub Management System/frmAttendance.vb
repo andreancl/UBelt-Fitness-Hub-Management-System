@@ -20,8 +20,7 @@
         & ", `Date` AS 'Date', `TimeLogIn` AS 'Log In', `TimeLogOut` as 'LogOut' FROM `daily`"
         reloadDgv(query, dgvDailyMembersRecord)
     End Sub
-
-    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+    Private Sub btnFind_Click(sender As Object, e As EventArgs) Handles btnDFind.Click
         With frmdailyMember
             .ShowDialog()
         End With
@@ -31,6 +30,33 @@
         & ", `Date` AS `Date`, `TimeLogIn` AS 'Time Log In', `TimeLogOut` AS 'Time Log Out'" _
         & "  FROM `daily` WHERE FullName LIKE '%" & txtDailySearchBox.Text & "%'"
         reloadDgv(query, dgvDailyMembersRecord)
+    End Sub
+    Private Sub btnDTimeIn_Click(sender As Object, e As EventArgs) Handles btnDTimeIn.Click
+        Try
+        Dim logdate As String = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
+        Dim login = TimeOfDay
+        query = "INSERT INTO `daily` (`MemberId`, `FullName`, `Date`, `TimeLogIn`)" _
+        & " VALUES ('" & txtDailyMemberId.Text & "', '" & txtDailyFullName.Text & "'" _
+        & ",'" & logdate & "', '" & login & "')"
+        create(query, txtDailyFullName.Text)
+        load_MembersInfoDaily()
+            cleartext(gbDaily)
+        Catch ex As Exception
+            MsgBox("This action cannot be performed.", MsgBoxStyle.Information)
+        End Try
+    End Sub
+    Private Sub btnDTimeOut_Click(sender As Object, e As EventArgs) Handles btnDTimeOut.Click
+        Dim logout = TimeOfDay
+
+        query = "UPDATE `daily` SET `TimeLogOut`= '" & logout & "' WHERE MemberId = '" _
+        & dgvDailyMembersRecord.CurrentRow.Cells(0).Value & "'"
+        updates(query, dgvDailyMembersRecord.CurrentRow.Cells(1).Value)
+        load_MembersInfoDaily()
+        cleartext(gbDaily)
+    End Sub
+    Private Sub dgvDailyMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDailyMembersRecord.CellContentClick
+        txtDailyMemberId.Text = dgvDailyMembersRecord.CurrentRow.Cells(0).Value
+        txtDailyFullName.Text = dgvDailyMembersRecord.CurrentRow.Cells(1).Value
     End Sub
 #End Region
 #Region "Monthly"
@@ -47,7 +73,7 @@
         & ", `Date` AS 'Date', `TimeLogIn` AS 'Log In', `TimeLogOut` as 'LogOut' FROM `monthly`"
         reloadDgv(query, dgvMonthlyMembersRecord)
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnMFind_Click(sender As Object, e As EventArgs) Handles btnMFind.Click
         With frmMonthlyMember
             .ShowDialog()
         End With
@@ -58,7 +84,28 @@
         & "  FROM `monthly` WHERE FullName LIKE '%" & txtMonthlySearchBox.Text & "%'"
         reloadDgv(query, dgvMonthlyMembersRecord)
     End Sub
+    Private Sub btnMTimeIn_Click(sender As Object, e As EventArgs) Handles btnMTimeIn.Click
+        Dim logdate As String = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
+        Dim login = TimeOfDay
+        query = "INSERT INTO `monthly` (`MemberId`, `FullName`, `Date`, `TimeLogIn`)" _
+        & " VALUES ('" & txtDailyMemberId.Text & "', '" & txtMonthlyFullName.Text & "'" _
+        & ",'" & logdate & "', '" & login & "')"
+        create(query, txtMonthlyFullName.Text)
+        load_MembersInfoMonthly()
+        cleartext(gbMonthly)
+    End Sub
 #End Region
+    Private Sub btnMTimeOut_Click(sender As Object, e As EventArgs) Handles btnMTimeOut.Click
+        Dim logout = TimeOfDay
 
-   
+        query = "UPDATE `monthly` SET `TimeLogOut`= '" & logout & "' WHERE MemberId = '" _
+        & dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value & "'"
+        updates(query, dgvMonthlyMembersRecord.CurrentRow.Cells(1).Value)
+        load_MembersInfoMonthly()
+        cleartext(gbMonthly)
+    End Sub
+    Private Sub dgvMonthlyMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMonthlyMembersRecord.CellContentClick
+        txtMonthlyMemberId.Text = dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value
+        txtMonthlyFullName.Text = dgvMonthlyMembersRecord.CurrentRow.Cells(1).Value
+    End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmdailyMember
+Partial Class frmMonthlyMember
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,10 @@ Partial Class frmdailyMember
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmdailyMember))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnTimeIn = New System.Windows.Forms.Button()
-        Me.txtMemberId = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtFullName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSelect = New System.Windows.Forms.Button()
         Me.dgvMemberList = New System.Windows.Forms.DataGridView()
@@ -44,95 +38,27 @@ Partial Class frmdailyMember
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Panel5.Controls.Add(Me.LinkLabel1)
-        Me.Panel5.Controls.Add(Me.Label2)
-        Me.Panel5.Controls.Add(Me.btnTimeIn)
-        Me.Panel5.Controls.Add(Me.txtMemberId)
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Controls.Add(Me.txtFullName)
         Me.Panel5.Controls.Add(Me.Label1)
         Me.Panel5.Controls.Add(Me.btnSelect)
         Me.Panel5.Controls.Add(Me.dgvMemberList)
         Me.Panel5.Controls.Add(Me.txtSearchBox)
-        Me.Panel5.Location = New System.Drawing.Point(25, 16)
+        Me.Panel5.Location = New System.Drawing.Point(23, 20)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(694, 385)
-        Me.Panel5.TabIndex = 12
+        Me.Panel5.TabIndex = 13
         '
         'LinkLabel1
         '
         Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(316, 352)
+        Me.LinkLabel1.Location = New System.Drawing.Point(321, 347)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(37, 15)
+        Me.LinkLabel1.Size = New System.Drawing.Size(45, 19)
         Me.LinkLabel1.TabIndex = 110
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Close"
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(84, 215)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(162, 26)
-        Me.Label2.TabIndex = 71
-        Me.Label2.Text = "Member Id"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnTimeIn
-        '
-        Me.btnTimeIn.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnTimeIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTimeIn.Font = New System.Drawing.Font("Calibri", 15.75!)
-        Me.btnTimeIn.ForeColor = System.Drawing.Color.White
-        Me.btnTimeIn.Image = CType(resources.GetObject("btnTimeIn.Image"), System.Drawing.Image)
-        Me.btnTimeIn.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnTimeIn.Location = New System.Drawing.Point(260, 293)
-        Me.btnTimeIn.Name = "btnTimeIn"
-        Me.btnTimeIn.Size = New System.Drawing.Size(136, 45)
-        Me.btnTimeIn.TabIndex = 84
-        Me.btnTimeIn.Text = "  Time In"
-        Me.btnTimeIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTimeIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTimeIn.UseVisualStyleBackColor = True
-        '
-        'txtMemberId
-        '
-        Me.txtMemberId.Font = New System.Drawing.Font("Calibri", 12.0!)
-        Me.txtMemberId.Location = New System.Drawing.Point(83, 246)
-        Me.txtMemberId.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.txtMemberId.Name = "txtMemberId"
-        Me.txtMemberId.Size = New System.Drawing.Size(218, 27)
-        Me.txtMemberId.TabIndex = 72
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(334, 216)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(162, 26)
-        Me.Label3.TabIndex = 69
-        Me.Label3.Text = "Full Name"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtFullName
-        '
-        Me.txtFullName.Font = New System.Drawing.Font("Calibri", 12.0!)
-        Me.txtFullName.Location = New System.Drawing.Point(335, 246)
-        Me.txtFullName.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.txtFullName.Name = "txtFullName"
-        Me.txtFullName.Size = New System.Drawing.Size(287, 27)
-        Me.txtFullName.TabIndex = 70
         '
         'Label1
         '
@@ -173,23 +99,23 @@ Partial Class frmdailyMember
         Me.dgvMemberList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvMemberList.BackgroundColor = System.Drawing.Color.PaleTurquoise
         Me.dgvMemberList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(213, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvMemberList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(213, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMemberList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMemberList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvMemberList.Location = New System.Drawing.Point(20, 66)
         Me.dgvMemberList.Name = "dgvMemberList"
         Me.dgvMemberList.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.dgvMemberList.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.dgvMemberList.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMemberList.Size = New System.Drawing.Size(656, 130)
+        Me.dgvMemberList.Size = New System.Drawing.Size(656, 263)
         Me.dgvMemberList.StandardTab = True
         Me.dgvMemberList.TabIndex = 11
         '
@@ -201,15 +127,16 @@ Partial Class frmdailyMember
         Me.txtSearchBox.Size = New System.Drawing.Size(272, 27)
         Me.txtSearchBox.TabIndex = 77
         '
-        'frmdailyMember
+        'frmMonthlyMember
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(740, 425)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel5)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Name = "frmdailyMember"
+        Me.Name = "frmMonthlyMember"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -218,14 +145,9 @@ Partial Class frmdailyMember
 
     End Sub
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnSelect As System.Windows.Forms.Button
-    Friend WithEvents txtSearchBox As System.Windows.Forms.TextBox
     Friend WithEvents dgvMemberList As System.Windows.Forms.DataGridView
-    Friend WithEvents btnTimeIn As System.Windows.Forms.Button
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtMemberId As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txtFullName As System.Windows.Forms.TextBox
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents txtSearchBox As System.Windows.Forms.TextBox
 End Class

@@ -94,7 +94,7 @@ Partial Class frmDashboard
         Me.btnBackup.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
         Me.btnBackup.Size = New System.Drawing.Size(256, 50)
         Me.btnBackup.TabIndex = 13
-        Me.btnBackup.Text = "   Backup"
+        Me.btnBackup.Text = "   Settings"
         Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBackup.UseVisualStyleBackColor = False

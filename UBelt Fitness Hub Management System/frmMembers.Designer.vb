@@ -22,18 +22,24 @@ Partial Class frmMembers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMembers))
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMembers))
         Me.lblResRec = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearchBox = New System.Windows.Forms.TextBox()
-        Me.btnNewResident = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.dgvMembersRecord = New System.Windows.Forms.DataGridView()
-        Me.Panel5.SuspendLayout()
+        Me.txtSearchBox = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnNewMember = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.dgvMembersRecord, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblResRec
@@ -47,52 +53,28 @@ Partial Class frmMembers
         Me.lblResRec.TabIndex = 13
         Me.lblResRec.Text = "MEMBERS RECORD"
         '
-        'Label1
+        'EditToolStripMenuItem
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(16, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 19)
-        Me.Label1.TabIndex = 78
-        Me.Label1.Text = "Search"
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
         '
-        'txtSearchBox
+        'DeleteToolStripMenuItem
         '
-        Me.txtSearchBox.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchBox.Location = New System.Drawing.Point(72, 10)
-        Me.txtSearchBox.Name = "txtSearchBox"
-        Me.txtSearchBox.Size = New System.Drawing.Size(272, 27)
-        Me.txtSearchBox.TabIndex = 77
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
-        'btnNewResident
+        'ToolStripSeparator1
         '
-        Me.btnNewResident.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnNewResident.FlatAppearance.BorderSize = 0
-        Me.btnNewResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNewResident.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNewResident.ForeColor = System.Drawing.Color.White
-        Me.btnNewResident.Image = CType(resources.GetObject("btnNewResident.Image"), System.Drawing.Image)
-        Me.btnNewResident.Location = New System.Drawing.Point(617, 0)
-        Me.btnNewResident.Name = "btnNewResident"
-        Me.btnNewResident.Size = New System.Drawing.Size(182, 48)
-        Me.btnNewResident.TabIndex = 0
-        Me.btnNewResident.Text = "   New Member"
-        Me.btnNewResident.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNewResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNewResident.UseVisualStyleBackColor = True
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(104, 6)
         '
-        'Panel5
+        'ContextMenuStrip1
         '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.Label1)
-        Me.Panel5.Controls.Add(Me.txtSearchBox)
-        Me.Panel5.Controls.Add(Me.btnNewResident)
-        Me.Panel5.Location = New System.Drawing.Point(135, 93)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(799, 48)
-        Me.Panel5.TabIndex = 12
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ToolStripSeparator1})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 54)
         '
         'dgvMembersRecord
         '
@@ -123,16 +105,63 @@ Partial Class frmMembers
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvMembersRecord.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvMembersRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvMembersRecord.Location = New System.Drawing.Point(135, 165)
+        Me.dgvMembersRecord.Location = New System.Drawing.Point(79, 174)
         Me.dgvMembersRecord.Name = "dgvMembersRecord"
         Me.dgvMembersRecord.RowHeadersVisible = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.dgvMembersRecord.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMembersRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMembersRecord.Size = New System.Drawing.Size(799, 435)
+        Me.dgvMembersRecord.Size = New System.Drawing.Size(951, 435)
         Me.dgvMembersRecord.StandardTab = True
         Me.dgvMembersRecord.TabIndex = 14
+        '
+        'txtSearchBox
+        '
+        Me.txtSearchBox.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchBox.Location = New System.Drawing.Point(72, 10)
+        Me.txtSearchBox.Name = "txtSearchBox"
+        Me.txtSearchBox.Size = New System.Drawing.Size(272, 27)
+        Me.txtSearchBox.TabIndex = 77
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(16, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 19)
+        Me.Label1.TabIndex = 78
+        Me.Label1.Text = "Search"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.btnNewMember)
+        Me.Panel5.Controls.Add(Me.Label1)
+        Me.Panel5.Controls.Add(Me.txtSearchBox)
+        Me.Panel5.Location = New System.Drawing.Point(79, 95)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(951, 48)
+        Me.Panel5.TabIndex = 12
+        '
+        'btnNewMember
+        '
+        Me.btnNewMember.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnNewMember.FlatAppearance.BorderSize = 0
+        Me.btnNewMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNewMember.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNewMember.ForeColor = System.Drawing.Color.White
+        Me.btnNewMember.Image = CType(resources.GetObject("btnNewMember.Image"), System.Drawing.Image)
+        Me.btnNewMember.Location = New System.Drawing.Point(769, 0)
+        Me.btnNewMember.Name = "btnNewMember"
+        Me.btnNewMember.Size = New System.Drawing.Size(182, 48)
+        Me.btnNewMember.TabIndex = 79
+        Me.btnNewMember.Text = "   New Member"
+        Me.btnNewMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNewMember.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNewMember.UseVisualStyleBackColor = True
         '
         'frmMembers
         '
@@ -145,17 +174,22 @@ Partial Class frmMembers
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmMembers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.dgvMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.dgvMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblResRec As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txtSearchBox As System.Windows.Forms.TextBox
-    Friend WithEvents btnNewResident As System.Windows.Forms.Button
-    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents dgvMembersRecord As System.Windows.Forms.DataGridView
+    Friend WithEvents txtSearchBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents btnNewMember As System.Windows.Forms.Button
 End Class

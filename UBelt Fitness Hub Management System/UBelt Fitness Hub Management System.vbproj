@@ -74,10 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attendance.Designer.vb">
-      <DependentUpon>Attendance.vb</DependentUpon>
+    <Compile Include="frmAttendance.Designer.vb">
+      <DependentUpon>frmAttendance.vb</DependentUpon>
     </Compile>
-    <Compile Include="Attendance.vb">
+    <Compile Include="frmAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conn.vb" />
@@ -101,6 +101,12 @@
     <Compile Include="frmMembers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMonthlyMember.Designer.vb">
+      <DependentUpon>frmMonthlyMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonthlyMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNewMember.Designer.vb">
       <DependentUpon>frmNewMember.vb</DependentUpon>
     </Compile>
@@ -122,8 +128,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="frmDailyMember.Designer.vb">
+      <DependentUpon>frmDailyMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDailyMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAttendance.resx">
+      <DependentUpon>frmAttendance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +148,9 @@
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMonthlyMember.resx">
+      <DependentUpon>frmMonthlyMember.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNewMember.resx">
       <DependentUpon>frmNewMember.vb</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +159,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDailyMember.resx">
+      <DependentUpon>frmDailyMember.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

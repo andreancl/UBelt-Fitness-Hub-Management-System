@@ -24,9 +24,9 @@ Partial Class frmNewMember
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNewMember))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblResId = New System.Windows.Forms.Label()
+        Me.lblMemId = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblResTitle = New System.Windows.Forms.Label()
+        Me.lblMemTitle = New System.Windows.Forms.Label()
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.dtpBirthdate = New System.Windows.Forms.DateTimePicker()
@@ -40,10 +40,10 @@ Partial Class frmNewMember
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.gbMembers = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.cmbMembership = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         Me.gbMembers.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -52,22 +52,22 @@ Partial Class frmNewMember
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.lblResId)
+        Me.Panel1.Controls.Add(Me.lblMemId)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.lblResTitle)
+        Me.Panel1.Controls.Add(Me.lblMemTitle)
         Me.Panel1.Location = New System.Drawing.Point(13, 14)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(481, 77)
         Me.Panel1.TabIndex = 82
         '
-        'lblResId
+        'lblMemId
         '
-        Me.lblResId.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblResId.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResId.Location = New System.Drawing.Point(523, 40)
-        Me.lblResId.Name = "lblResId"
-        Me.lblResId.Size = New System.Drawing.Size(249, 34)
-        Me.lblResId.TabIndex = 4
+        Me.lblMemId.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblMemId.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMemId.Location = New System.Drawing.Point(295, 51)
+        Me.lblMemId.Name = "lblMemId"
+        Me.lblMemId.Size = New System.Drawing.Size(183, 26)
+        Me.lblMemId.TabIndex = 4
         '
         'Label1
         '
@@ -80,16 +80,16 @@ Partial Class frmNewMember
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Please fill out the form carefully."
         '
-        'lblResTitle
+        'lblMemTitle
         '
-        Me.lblResTitle.AutoSize = True
-        Me.lblResTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblResTitle.Font = New System.Drawing.Font("Calibri", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResTitle.Location = New System.Drawing.Point(0, 8)
-        Me.lblResTitle.Name = "lblResTitle"
-        Me.lblResTitle.Size = New System.Drawing.Size(473, 42)
-        Me.lblResTitle.TabIndex = 1
-        Me.lblResTitle.Text = "MEMBER REGISTRATION FORM"
+        Me.lblMemTitle.AutoSize = True
+        Me.lblMemTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblMemTitle.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMemTitle.Location = New System.Drawing.Point(0, 8)
+        Me.lblMemTitle.Name = "lblMemTitle"
+        Me.lblMemTitle.Size = New System.Drawing.Size(435, 39)
+        Me.lblMemTitle.TabIndex = 1
+        Me.lblMemTitle.Text = "MEMBER REGISTRATION FORM"
         '
         'txtAddress
         '
@@ -265,6 +265,19 @@ Partial Class frmNewMember
         Me.gbMembers.TabIndex = 95
         Me.gbMembers.TabStop = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.White
+        Me.LinkLabel1.Location = New System.Drawing.Point(177, 301)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(37, 15)
+        Me.LinkLabel1.TabIndex = 109
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Close"
+        '
         'cmbMembership
         '
         Me.cmbMembership.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -298,19 +311,6 @@ Partial Class frmNewMember
         Me.Panel2.Size = New System.Drawing.Size(481, 457)
         Me.Panel2.TabIndex = 81
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(177, 301)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(37, 15)
-        Me.LinkLabel1.TabIndex = 109
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Close"
-        '
         'frmNewMember
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,9 +331,9 @@ Partial Class frmNewMember
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lblResId As System.Windows.Forms.Label
+    Friend WithEvents lblMemId As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lblResTitle As System.Windows.Forms.Label
+    Friend WithEvents lblMemTitle As System.Windows.Forms.Label
     Friend WithEvents txtAddress As System.Windows.Forms.TextBox
     Friend WithEvents txtContactNo As System.Windows.Forms.TextBox
     Friend WithEvents dtpBirthdate As System.Windows.Forms.DateTimePicker

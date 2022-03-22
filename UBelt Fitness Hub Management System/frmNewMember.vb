@@ -3,7 +3,7 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim rdo As String = ""
-            query = "SELECT * FROM `clients` WHERE `MemberId`='" & lblResId.Text & "'"
+            query = "SELECT * FROM `members` WHERE `MemberId`='" & lblMemId.Text & "'"
             reloadtxt(query)
 
             If dt.Rows.Count > 0 Then
@@ -13,10 +13,10 @@
                     rdo = "Female"
                 End If
 
-                query = "UPDATE `clients` SET  `FullName`='" & txtFullName.Text _
+                query = "UPDATE `members` SET  `FullName`='" & txtFullName.Text _
                    & "', `Sex`='" & rdo & "', `Birthdate`='" & Format(dtpBirthdate.Value, "yyyy-MM-dd") _
                    & "', `ContactNumber`='" & txtContactNo.Text & "', `Address`='" & txtAddress.Text _
-                   & "', `MembershipType`=" & cmbMembership.Text & "' WHERE `VisitorId`='" & lblResId.Text & "'"
+                   & "', `MembershipType`=" & cmbMembership.Text & "' WHERE `VisitorId`='" & lblMemId.Text & "'"
                 updates(query, txtFullName.Text)
             Else
                 Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
@@ -28,7 +28,7 @@
                     rdo = "Female"
                 End If
 
-                query = "INSERT INTO `clients` (`MemberId`, `FullName`, `Sex`, `Birthdate`" _
+                query = "INSERT INTO `members` (`MemberId`, `FullName`, `Sex`, `Birthdate`" _
                     & ", `ContactNumber`, `Address`, `MembershipType`) VALUES ('" & member_id & "'" _
                     & ", '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text & "'" _
                     & ", '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "')"
@@ -46,9 +46,9 @@
     Private Sub frmNewMember_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         setup(gbMembers)
     End Sub
-    Private Sub lblResId_TextChanged(sender As Object, e As EventArgs) Handles lblResId.TextChanged
+    Private Sub lblResId_TextChanged(sender As Object, e As EventArgs) Handles lblMemId.TextChanged
         Try
-            query = "SELECT * FROM `clients` WHERE `MemberId`='" & lblResId.Text & "'"
+            query = "SELECT * FROM `members` WHERE `MemberId`='" & lblMemId.Text & "'"
             reloadtxt(query)
 
             If dt.Rows.Count > 0 Then

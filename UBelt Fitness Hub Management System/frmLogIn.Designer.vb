@@ -25,7 +25,6 @@ Partial Class frmLogIn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogIn))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnForgotPassword = New System.Windows.Forms.Button()
         Me.chckboxShowPassword = New System.Windows.Forms.CheckBox()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
@@ -52,7 +51,6 @@ Partial Class frmLogIn
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnForgotPassword)
         Me.GroupBox1.Controls.Add(Me.chckboxShowPassword)
         Me.GroupBox1.Controls.Add(Me.btnExit)
         Me.GroupBox1.Controls.Add(Me.btnLogin)
@@ -63,25 +61,10 @@ Partial Class frmLogIn
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(13, 106)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(517, 288)
+        Me.GroupBox1.Size = New System.Drawing.Size(517, 239)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Log-in Details:"
-        '
-        'btnForgotPassword
-        '
-        Me.btnForgotPassword.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnForgotPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnForgotPassword.ForeColor = System.Drawing.Color.Black
-        Me.btnForgotPassword.Location = New System.Drawing.Point(168, 239)
-        Me.btnForgotPassword.Name = "btnForgotPassword"
-        Me.btnForgotPassword.Size = New System.Drawing.Size(277, 30)
-        Me.btnForgotPassword.TabIndex = 0
-        Me.btnForgotPassword.TabStop = False
-        Me.btnForgotPassword.Text = "FORGOT PASSWORD ?"
-        Me.btnForgotPassword.UseVisualStyleBackColor = False
         '
         'chckboxShowPassword
         '
@@ -180,16 +163,16 @@ Partial Class frmLogIn
         Me.Panel.Size = New System.Drawing.Size(549, 104)
         Me.Panel.TabIndex = 2
         '
-        'Form1
+        'frmLogIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 399)
+        Me.ClientSize = New System.Drawing.Size(546, 361)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "frmLogIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -200,7 +183,6 @@ Partial Class frmLogIn
     End Sub
     Friend WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnForgotPassword As System.Windows.Forms.Button
     Friend WithEvents chckboxShowPassword As System.Windows.Forms.CheckBox
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents btnLogin As System.Windows.Forms.Button

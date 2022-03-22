@@ -9,4 +9,9 @@ Public Class frmDashboard
         closeChildForm()
         showForm(frmMembers)
     End Sub
+
+    Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+        closeChildForm()
+        showForm(frmAttendance)
+    End Sub
 End Class

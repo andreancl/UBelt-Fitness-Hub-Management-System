@@ -194,4 +194,8 @@ Public Class frmSettings
         OpenFileDialog1.InitialDirectory = "C:\"
         OpenFileDialog1.ShowDialog()
     End Sub
+
+    Private Sub gbUser_Enter(sender As Object, e As EventArgs) Handles gbUser.Enter
+
+    End Sub
 End Class

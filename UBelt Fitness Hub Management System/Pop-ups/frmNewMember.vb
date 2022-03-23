@@ -16,7 +16,7 @@
                 query = "UPDATE `members` SET  `FullName`='" & txtFullName.Text _
                    & "', `Sex`='" & rdo & "', `Birthdate`='" & Format(dtpBirthdate.Value, "yyyy-MM-dd") _
                    & "', `ContactNumber`='" & txtContactNo.Text & "', `Address`='" & txtAddress.Text _
-                   & "', `MembershipType`=" & cmbMembership.Text & "' WHERE `VisitorId`='" & lblMemId.Text & "'"
+                   & "', `MembershipType`='" & cmbMembership.Text & "' WHERE `MemberId`='" & lblMemId.Text & "'"
                 updates(query, txtFullName.Text)
             Else
                 Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)

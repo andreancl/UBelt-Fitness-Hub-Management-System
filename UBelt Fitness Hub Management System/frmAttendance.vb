@@ -1,5 +1,5 @@
 ﻿Public Class frmAttendance
-
+    Dim index As Integer = 0
     Private Sub frmAttendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
     End Sub
@@ -85,14 +85,18 @@
         reloadDgv(query, dgvMonthlyMembersRecord)
     End Sub
     Private Sub btnMTimeIn_Click(sender As Object, e As EventArgs) Handles btnMTimeIn.Click
-        Dim logdate As String = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
-        Dim login = TimeOfDay
-        query = "INSERT INTO `monthly` (`MemberId`, `FullName`, `Date`, `TimeLogIn`)" _
-        & " VALUES ('" & txtDailyMemberId.Text & "', '" & txtMonthlyFullName.Text & "'" _
-        & ",'" & logdate & "', '" & login & "')"
-        create(query, txtMonthlyFullName.Text)
-        load_MembersInfoMonthly()
-        cleartext(gbMonthly)
+        Try
+            Dim logdate As String = String.Format("{0:dd-MM-yyyy}", DateTime.Now)
+            Dim login = TimeOfDay
+            query = "INSERT INTO `monthly` (`MemberId`, `FullName`, `Date`, `TimeLogIn`)" _
+            & " VALUES ('" & txtMonthlyMemberId.Text & "', '" & txtMonthlyFullName.Text & "'" _
+            & ",'" & logdate & "', '" & login & "')"
+            create(query, txtMonthlyFullName.Text)
+            load_MembersInfoMonthly()
+            cleartext(gbMonthly)
+        Catch ex As Exception
+            MsgBox("This action cannot be performed.", MsgBoxStyle.Information)
+        End Try
     End Sub
 #End Region
     Private Sub btnMTimeOut_Click(sender As Object, e As EventArgs) Handles btnMTimeOut.Click
@@ -107,5 +111,62 @@
     Private Sub dgvMonthlyMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMonthlyMembersRecord.CellContentClick
         txtMonthlyMemberId.Text = dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value
         txtMonthlyFullName.Text = dgvMonthlyMembersRecord.CurrentRow.Cells(1).Value
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+            query = "DELETE FROM daily WHERE MemberId = '" & dgvDailyMembersRecord.CurrentRow.Cells(0).Value & "'"
+        deletes(query, dgvDailyMembersRecord.CurrentRow.Cells(1).Value)
+        load_MembersInfoDaily()
+    End Sub
+
+    Private Sub dgvDailyMembersRecords_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvDailyMembersRecord.CellToolTipTextNeeded
+        Dim dgv = DirectCast(sender, DataGridView)
+
+        If e.RowIndex = -1 AndAlso e.ColumnIndex <> -1 Then
+            e.ToolTipText = dgv.Columns(e.ColumnIndex).HeaderText & vbCrLf
+        Else
+            e.ToolTipText = "right click to see available options"
+        End If
+    End Sub
+    Private Sub dgvDailyMembersRecord_CellMouseUp(ByVal sender As Object, ByVal e As DataGridViewCellMouseEventArgs) Handles dgvDailyMembersRecord.CellMouseUp
+        Try
+            If e.Button = System.Windows.Forms.MouseButtons.Right Then
+                dgvDailyMembersRecord.Rows(e.RowIndex).Selected = True
+                index = e.RowIndex
+                dgvDailyMembersRecord.CurrentCell = dgvDailyMembersRecord.Rows(e.RowIndex).Cells(1)
+                ContextMenuStrip1.Show(dgvDailyMembersRecord, e.Location)
+                ContextMenuStrip1.Show(Cursor.Position)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub dgvMonthlyMembersRecords_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvMonthlyMembersRecord.CellToolTipTextNeeded
+        Dim dgv = DirectCast(sender, DataGridView)
+
+        If e.RowIndex = -1 AndAlso e.ColumnIndex <> -1 Then
+            e.ToolTipText = dgv.Columns(e.ColumnIndex).HeaderText & vbCrLf
+        Else
+            e.ToolTipText = "right click to see available options"
+        End If
+    End Sub
+    Private Sub dgvMonthlyMembersRecord_CellMouseUp(ByVal sender As Object, ByVal e As DataGridViewCellMouseEventArgs) Handles dgvMonthlyMembersRecord.CellMouseUp
+        Try
+            If e.Button = System.Windows.Forms.MouseButtons.Right Then
+                dgvMonthlyMembersRecord.Rows(e.RowIndex).Selected = True
+                index = e.RowIndex
+                dgvMonthlyMembersRecord.CurrentCell = dgvMonthlyMembersRecord.Rows(e.RowIndex).Cells(1)
+                ContextMenuStrip2.Show(dgvMonthlyMembersRecord, e.Location)
+                ContextMenuStrip2.Show(Cursor.Position)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        query = "DELETE FROM monthly WHERE MemberId = '" & dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value & "'"
+        deletes(query, dgvMonthlyMembersRecord.CurrentRow.Cells(1).Value)
+        load_MembersInfoMonthly()
     End Sub
 End Class

@@ -33,6 +33,7 @@ Public Class frmMembers
         Try
             frmNewMember.lblMemTitle.Text = "UPDATE MEMBER INFORMATION"
             frmNewMember.lblMemId.Text = dgvMembersRecord.CurrentRow.Cells(0).Value()
+            frmNewMember.btnSave.Text = "Update Member"
             showForm(frmNewMember)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -77,6 +78,10 @@ Public Class frmMembers
     End Sub
 
     Private Sub dgvMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMembersRecord.CellContentClick
+
+    End Sub
+
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
 
     End Sub
 End Class

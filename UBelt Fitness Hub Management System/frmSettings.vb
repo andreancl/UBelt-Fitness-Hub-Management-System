@@ -82,7 +82,7 @@ Public Class frmSettings
        & ", `ContactNumber` AS 'ContactNumber', `Address` AS 'Address' FROM `users`"
         reloadDgv(query, dgvUserRecords)
     End Sub
-    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         query = "DELETE FROM users WHERE UserId = '" & dgvUserRecords.CurrentRow.Cells(0).Value & "'"
         deletes(query, dgvUserRecords.CurrentRow.Cells(1).Value)
     End Sub
@@ -193,9 +193,5 @@ Public Class frmSettings
         OpenFileDialog1.Title = "Please Select a File"
         OpenFileDialog1.InitialDirectory = "C:\"
         OpenFileDialog1.ShowDialog()
-    End Sub
-
-    Private Sub gbUser_Enter(sender As Object, e As EventArgs) Handles gbUser.Enter
-
     End Sub
 End Class

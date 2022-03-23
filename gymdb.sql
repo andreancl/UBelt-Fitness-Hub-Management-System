@@ -34,7 +34,7 @@ CREATE TABLE `daily` (
   KEY `FullName_idx` (`FullName`),
   CONSTRAINT `FullName` FOREIGN KEY (`FullName`) REFERENCES `members` (`FullName`),
   CONSTRAINT `MemberId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `daily` (
 
 LOCK TABLES `daily` WRITE;
 /*!40000 ALTER TABLE `daily` DISABLE KEYS */;
+INSERT INTO `daily` VALUES (1,'MEM210320220318','Danilo Beloro','22-03-2022','10:47:06 PM','10:47:21 PM');
 /*!40000 ALTER TABLE `daily` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +77,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'MEM210320220310','Andrea Rafael','Female','2000-01-06',9987654321,'Caloocan City','Monthly','2022-03-21 15:43:10',NULL),(2,'MEM210320220318','Danilo Beloro','Male','2000-03-09',920321632,'Quezon City','Daily','2022-03-21 15:49:18',NULL),(5,'MEM220320220232','Aileen Petilla','Female','2000-09-02',987654321,'Quezon City','Daily','2022-03-22 14:12:32',NULL),(6,'MEM220320220555','Mayeth Pagalan','Female','2000-07-19',987654323,'Manila','Monthly','2022-03-22 17:21:55',NULL);
+INSERT INTO `members` VALUES (1,'MEM210320220310','Andrea Rafael','Female','2000-01-06',9987654321,'Caloocan City','Monthly','2022-03-21 15:43:10',NULL),(2,'MEM210320220318','Danilo Beloro','Male','2000-03-09',920321632,'Quezon City','Daily','2022-03-21 15:49:18',NULL),(5,'MEM220320220232','Aileen Petilla','Female','2000-09-02',987654321,'Quezon City','Daily','2022-03-22 14:12:32',NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +100,7 @@ CREATE TABLE `monthly` (
   KEY `FullNames_idx` (`FullName`),
   CONSTRAINT `FullNames` FOREIGN KEY (`FullName`) REFERENCES `members` (`FullName`),
   CONSTRAINT `MembersId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,6 +109,7 @@ CREATE TABLE `monthly` (
 
 LOCK TABLES `monthly` WRITE;
 /*!40000 ALTER TABLE `monthly` DISABLE KEYS */;
+INSERT INTO `monthly` VALUES (1,'MEM220320220232','Andrea Rafael','22-03-2022','10:47:46 PM',NULL);
 /*!40000 ALTER TABLE `monthly` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,14 +124,18 @@ CREATE TABLE `users` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `UserId` varchar(45) NOT NULL,
   `FullName` char(45) NOT NULL,
+  `Sex` varchar(45) NOT NULL,
+  `Birthdate` varchar(45) NOT NULL,
+  `ContactNumber` varchar(45) NOT NULL,
+  `Address` varchar(45) NOT NULL,
   `Username` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
+  `UserTypeId` varchar(45) DEFAULT NULL,
   `DateTimeCreated` datetime DEFAULT CURRENT_TIMESTAMP,
   `DateTimeUpdated` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `Id_UNIQUE` (`Id`),
-  UNIQUE KEY `Password_UNIQUE` (`Password`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `Id_UNIQUE` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +144,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'123','Andrea Rafael','admin','0000','2022-03-05 17:24:13','2022-03-05 17:24:13');
+INSERT INTO `users` VALUES (2,'USER230320220134','Mayeth Pagalan','Female','2000-06-21','1234567890','Manila','qwert','1234','2','2022-03-23 01:20:34','2022-03-23 01:20:34'),(3,'USER230320220111','Andrea Rafael','Female','2000-01-06','087654321','Caloocan','admin','0000','1','2022-03-23 01:40:11','2022-03-23 01:40:11');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -151,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-22 20:49:27
+-- Dump completed on 2022-03-23 10:47:26

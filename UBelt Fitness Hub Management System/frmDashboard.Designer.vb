@@ -26,7 +26,7 @@ Partial Class frmDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lbUBFH = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnBackup = New System.Windows.Forms.Button()
+        Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnAttendance = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnMembers = New System.Windows.Forms.Button()
@@ -65,7 +65,7 @@ Partial Class frmDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnBackup)
+        Me.Panel1.Controls.Add(Me.btnSettings)
         Me.Panel1.Controls.Add(Me.btnAttendance)
         Me.Panel1.Controls.Add(Me.btnLogOut)
         Me.Panel1.Controls.Add(Me.btnMembers)
@@ -78,26 +78,26 @@ Partial Class frmDashboard
         Me.Panel1.Size = New System.Drawing.Size(256, 749)
         Me.Panel1.TabIndex = 6
         '
-        'btnBackup
+        'btnSettings
         '
-        Me.btnBackup.BackColor = System.Drawing.Color.Transparent
-        Me.btnBackup.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBackup.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.btnBackup.FlatAppearance.BorderSize = 0
-        Me.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBackup.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBackup.ForeColor = System.Drawing.Color.White
-        Me.btnBackup.Image = CType(resources.GetObject("btnBackup.Image"), System.Drawing.Image)
-        Me.btnBackup.Location = New System.Drawing.Point(0, 457)
-        Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
-        Me.btnBackup.Size = New System.Drawing.Size(256, 50)
-        Me.btnBackup.TabIndex = 13
-        Me.btnBackup.Text = "   Settings"
-        Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBackup.UseVisualStyleBackColor = False
+        Me.btnSettings.BackColor = System.Drawing.Color.Transparent
+        Me.btnSettings.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSettings.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSettings.FlatAppearance.BorderSize = 0
+        Me.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSettings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSettings.ForeColor = System.Drawing.Color.White
+        Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
+        Me.btnSettings.Location = New System.Drawing.Point(0, 457)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
+        Me.btnSettings.Size = New System.Drawing.Size(256, 50)
+        Me.btnSettings.TabIndex = 13
+        Me.btnSettings.Text = "   Settings"
+        Me.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSettings.UseVisualStyleBackColor = False
         '
         'btnAttendance
         '
@@ -249,7 +249,7 @@ Partial Class frmDashboard
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents lbUBFH As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents btnBackup As System.Windows.Forms.Button
+    Friend WithEvents btnSettings As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnMembers As System.Windows.Forms.Button
     Friend WithEvents btnDashboard As System.Windows.Forms.Button

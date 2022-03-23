@@ -32,10 +32,12 @@
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
         frmAttendance.txtMonthlyMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
         frmAttendance.txtMonthlyFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
+        Me.Close()
     End Sub
 
     Private Sub dgvMemberList_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvMemberList.DoubleClick
         frmAttendance.txtMonthlyMemberId.Text = dgvMemberList.CurrentRow.Cells(0).Value
         frmAttendance.txtMonthlyFullName.Text = dgvMemberList.CurrentRow.Cells(1).Value
+        Me.Close()
     End Sub
 End Class

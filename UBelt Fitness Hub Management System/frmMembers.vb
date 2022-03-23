@@ -71,4 +71,12 @@ Public Class frmMembers
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
+
+    Private Sub dgvMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMembersRecord.CellContentClick
+
+    End Sub
 End Class

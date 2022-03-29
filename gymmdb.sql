@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
--- Host: localhost    Database: gymdb
+-- Host: localhost    Database: gymmdb
 -- ------------------------------------------------------
 -- Server version	8.0.27
 
@@ -25,15 +25,18 @@ DROP TABLE IF EXISTS `daily`;
 CREATE TABLE `daily` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `MemberId` varchar(45) NOT NULL,
-  `FullName` char(50) NOT NULL,
+  `FullName` char(45) NOT NULL,
+  `MembershipType` char(10) NOT NULL,
   `Date` varchar(45) NOT NULL,
   `TimeLogIn` varchar(45) NOT NULL,
   `TimeLogOut` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `MemberId_idx` (`MemberId`),
   KEY `FullName_idx` (`FullName`),
+  KEY `MembershipType_idx` (`MembershipType`),
   CONSTRAINT `FullName` FOREIGN KEY (`FullName`) REFERENCES `members` (`FullName`),
-  CONSTRAINT `MemberId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberId`)
+  CONSTRAINT `MemberId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberID`),
+  CONSTRAINT `MembershipType` FOREIGN KEY (`MembershipType`) REFERENCES `members` (`MembershipType`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,7 +46,7 @@ CREATE TABLE `daily` (
 
 LOCK TABLES `daily` WRITE;
 /*!40000 ALTER TABLE `daily` DISABLE KEYS */;
-INSERT INTO `daily` VALUES (1,'MEM210320220318','Danilo Beloro','22-03-2022','10:47:06 PM','10:47:21 PM');
+INSERT INTO `daily` VALUES (1,'MEM290320220519','Mayeth Pagalan','Daily','March 29, 2022','5:39:13 PM','5:40:24 PM');
 /*!40000 ALTER TABLE `daily` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,19 +59,20 @@ DROP TABLE IF EXISTS `members`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `members` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `MemberId` varchar(45) NOT NULL,
-  `FullName` char(50) NOT NULL,
+  `MemberID` varchar(45) NOT NULL,
+  `FullName` char(45) NOT NULL,
   `Sex` char(10) NOT NULL,
   `Birthdate` date NOT NULL,
   `ContactNumber` bigint NOT NULL,
-  `Address` varchar(50) NOT NULL,
+  `Address` varchar(45) NOT NULL,
   `MembershipType` char(10) NOT NULL,
-  `DateRegistered` datetime DEFAULT CURRENT_TIMESTAMP,
-  `Age` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`MemberId`),
+  `DateRegistered` varchar(45) DEFAULT NULL,
+  `Age` int DEFAULT NULL,
+  PRIMARY KEY (`MemberID`),
   UNIQUE KEY `Id_UNIQUE` (`Id`),
-  UNIQUE KEY `FullName_UNIQUE` (`FullName`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `FullName_UNIQUE` (`FullName`),
+  KEY `MembershipType_UNIQUE` (`MembershipType`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +81,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'MEM210320220310','Andrea Rafael','Female','2000-01-06',9987654321,'Caloocan City','Monthly','2022-03-21 15:43:10',NULL),(2,'MEM210320220318','Danilo Beloro','Male','2000-03-09',920321632,'Quezon City','Daily','2022-03-21 15:49:18',NULL),(5,'MEM220320220232','Aileen Petilla','Female','2000-09-02',987654321,'Quezon City','Daily','2022-03-22 14:12:32',NULL);
+INSERT INTO `members` VALUES (1,'MEM290320220519','Mayeth Pagalan','Female','2002-03-29',987654321,'Mandaluyong','Daily','March 29, 2022',NULL),(2,'MEM290320220545','Danilo Beloro','Male','1998-03-23',1234560212,'Caloocan City','Monthly','March 29, 2022',NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,16 +95,19 @@ DROP TABLE IF EXISTS `monthly`;
 CREATE TABLE `monthly` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `MemberId` varchar(45) NOT NULL,
-  `FullName` char(50) NOT NULL,
+  `FullName` char(45) NOT NULL,
+  `MembershipType` char(10) NOT NULL,
   `Date` varchar(45) NOT NULL,
   `TimeLogIn` varchar(45) NOT NULL,
   `TimeLogOut` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `MembersId_idx` (`MemberId`),
   KEY `FullNames_idx` (`FullName`),
+  KEY `MembershipTypes_idx` (`MembershipType`),
   CONSTRAINT `FullNames` FOREIGN KEY (`FullName`) REFERENCES `members` (`FullName`),
-  CONSTRAINT `MembersId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `MembershipTypes` FOREIGN KEY (`MembershipType`) REFERENCES `members` (`MembershipType`),
+  CONSTRAINT `MembersId` FOREIGN KEY (`MemberId`) REFERENCES `members` (`MemberID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +116,7 @@ CREATE TABLE `monthly` (
 
 LOCK TABLES `monthly` WRITE;
 /*!40000 ALTER TABLE `monthly` DISABLE KEYS */;
-INSERT INTO `monthly` VALUES (1,'MEM220320220232','Andrea Rafael','22-03-2022','10:47:46 PM',NULL);
+INSERT INTO `monthly` VALUES (2,'MEM290320220545','Danilo Beloro','Monthly','March 29, 2022','5:42:58 PM','6:26:41 PM');
 /*!40000 ALTER TABLE `monthly` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,20 +129,16 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `UserId` varchar(45) NOT NULL,
-  `FullName` char(45) NOT NULL,
-  `Sex` varchar(45) NOT NULL,
-  `Birthdate` varchar(45) NOT NULL,
-  `ContactNumber` varchar(45) NOT NULL,
-  `Address` varchar(45) NOT NULL,
-  `Username` varchar(45) NOT NULL,
+  `UserId` varchar(45) DEFAULT NULL,
+  `FullName` char(45) DEFAULT NULL,
+  `Username` varchar(12) NOT NULL,
   `Password` varchar(45) NOT NULL,
-  `UserTypeId` varchar(45) DEFAULT NULL,
-  `DateTimeCreated` datetime DEFAULT CURRENT_TIMESTAMP,
-  `DateTimeUpdated` datetime DEFAULT CURRENT_TIMESTAMP,
+  `SecretQuestion` varchar(45) DEFAULT NULL,
+  `SecretAnswer` varchar(45) DEFAULT NULL,
+  `UserTypeId` int DEFAULT NULL,
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `Id_UNIQUE` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `UserId_UNIQUE` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +147,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'USER230320220134','Mayeth Pagalan','Female','2000-06-21','1234567890','Manila','qwert','1234','2','2022-03-23 01:20:34','2022-03-23 01:20:34'),(3,'USER230320220111','Andrea Rafael','Female','2000-01-06','087654321','Caloocan','admin','0000','1','2022-03-23 01:40:11','2022-03-23 01:40:11');
+INSERT INTO `users` VALUES (2,'USER290320220640','Andrea Mae Nicole Rafael','admin','1111','What things that makes you mad?','you',1),(3,'USER300320221255','Mayeth Pagalan','user','1234','What is your favorite band?','nts',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -157,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-23 10:47:26
+-- Dump completed on 2022-03-30  0:44:09

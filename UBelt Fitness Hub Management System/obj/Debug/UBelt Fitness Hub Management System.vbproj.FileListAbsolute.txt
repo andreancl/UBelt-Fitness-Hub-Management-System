@@ -30,3 +30,6 @@ C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.exe
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.xml
 C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt Fitness Hub Management System.pdb
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmLogHistory.resources
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmForgotPassword.resources
+C:\Users\asus\Documents\GitHub\UBelt-Fitness-Hub-Management-System\UBelt Fitness Hub Management System\obj\Debug\UBelt_Fitness_Hub_Management_System.frmSetNewPassword.resources

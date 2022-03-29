@@ -80,12 +80,31 @@
     <Compile Include="frmAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmForgotPassword.Designer.vb">
+      <DependentUpon>frmForgotPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmForgotPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogHistory.Designer.vb">
+      <DependentUpon>frmLogHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetNewPassword.Designer.vb">
+      <DependentUpon>frmSetNewPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetNewPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSettings.Designer.vb">
       <DependentUpon>frmSettings.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Functions.vb" />
     <Compile Include="Modules\Conn.vb" />
     <Compile Include="Modules\Crud.vb" />
     <Compile Include="frmLogIn.vb">
@@ -146,6 +165,12 @@
     <EmbeddedResource Include="frmAttendance.resx">
       <DependentUpon>frmAttendance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmForgotPassword.resx">
+      <DependentUpon>frmForgotPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogHistory.resx">
+      <DependentUpon>frmLogHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetNewPassword.resx">
+      <DependentUpon>frmSetNewPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.vb</DependentUpon>

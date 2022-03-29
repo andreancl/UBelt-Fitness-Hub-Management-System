@@ -23,15 +23,16 @@ Partial Class frmAttendance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblResRec = New System.Windows.Forms.Label()
         Me.tcMembership = New System.Windows.Forms.TabControl()
         Me.tpDaily = New System.Windows.Forms.TabPage()
+        Me.dgvDailyMembersRecord = New System.Windows.Forms.DataGridView()
         Me.gbDaily = New System.Windows.Forms.GroupBox()
         Me.btnDFind = New System.Windows.Forms.Button()
         Me.btnDTimeOut = New System.Windows.Forms.Button()
@@ -40,10 +41,10 @@ Partial Class frmAttendance
         Me.txtDailyMemberId = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtDailyFullName = New System.Windows.Forms.TextBox()
-        Me.dgvDailyMembersRecord = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDailySearchBox = New System.Windows.Forms.TextBox()
         Me.tpMonthly = New System.Windows.Forms.TabPage()
+        Me.dgvMonthlyMembersRecord = New System.Windows.Forms.DataGridView()
         Me.gbMonthly = New System.Windows.Forms.GroupBox()
         Me.btnMFind = New System.Windows.Forms.Button()
         Me.btnMTimeOut = New System.Windows.Forms.Button()
@@ -52,7 +53,6 @@ Partial Class frmAttendance
         Me.txtMonthlyMemberId = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtMonthlyFullName = New System.Windows.Forms.TextBox()
-        Me.dgvMonthlyMembersRecord = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtMonthlySearchBox = New System.Windows.Forms.TextBox()
         Me.lblDateTime = New System.Windows.Forms.Label()
@@ -65,11 +65,11 @@ Partial Class frmAttendance
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.tcMembership.SuspendLayout()
         Me.tpDaily.SuspendLayout()
-        Me.gbDaily.SuspendLayout()
         CType(Me.dgvDailyMembersRecord, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbDaily.SuspendLayout()
         Me.tpMonthly.SuspendLayout()
-        Me.gbMonthly.SuspendLayout()
         CType(Me.dgvMonthlyMembersRecord, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbMonthly.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
@@ -99,8 +99,8 @@ Partial Class frmAttendance
         'tpDaily
         '
         Me.tpDaily.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.tpDaily.Controls.Add(Me.gbDaily)
         Me.tpDaily.Controls.Add(Me.dgvDailyMembersRecord)
+        Me.tpDaily.Controls.Add(Me.gbDaily)
         Me.tpDaily.Controls.Add(Me.Label1)
         Me.tpDaily.Controls.Add(Me.txtDailySearchBox)
         Me.tpDaily.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -110,6 +110,42 @@ Partial Class frmAttendance
         Me.tpDaily.Size = New System.Drawing.Size(943, 482)
         Me.tpDaily.TabIndex = 0
         Me.tpDaily.Text = "DAILY"
+        '
+        'dgvDailyMembersRecord
+        '
+        Me.dgvDailyMembersRecord.AllowUserToAddRows = False
+        Me.dgvDailyMembersRecord.AllowUserToDeleteRows = False
+        Me.dgvDailyMembersRecord.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvDailyMembersRecord.BackgroundColor = System.Drawing.Color.PaleTurquoise
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDailyMembersRecord.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvDailyMembersRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDailyMembersRecord.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvDailyMembersRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgvDailyMembersRecord.Location = New System.Drawing.Point(407, 80)
+        Me.dgvDailyMembersRecord.Name = "dgvDailyMembersRecord"
+        Me.dgvDailyMembersRecord.RowHeadersVisible = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvDailyMembersRecord.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvDailyMembersRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvDailyMembersRecord.Size = New System.Drawing.Size(512, 375)
+        Me.dgvDailyMembersRecord.TabIndex = 91
         '
         'gbDaily
         '
@@ -217,46 +253,6 @@ Partial Class frmAttendance
         Me.txtDailyFullName.Size = New System.Drawing.Size(287, 27)
         Me.txtDailyFullName.TabIndex = 84
         '
-        'dgvDailyMembersRecord
-        '
-        Me.dgvDailyMembersRecord.AllowUserToAddRows = False
-        Me.dgvDailyMembersRecord.AllowUserToDeleteRows = False
-        Me.dgvDailyMembersRecord.AllowUserToResizeColumns = False
-        Me.dgvDailyMembersRecord.AllowUserToResizeRows = False
-        Me.dgvDailyMembersRecord.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvDailyMembersRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvDailyMembersRecord.BackgroundColor = System.Drawing.Color.PaleTurquoise
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(213, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDailyMembersRecord.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
-        Me.dgvDailyMembersRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDailyMembersRecord.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvDailyMembersRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvDailyMembersRecord.Location = New System.Drawing.Point(407, 80)
-        Me.dgvDailyMembersRecord.Name = "dgvDailyMembersRecord"
-        Me.dgvDailyMembersRecord.RowHeadersVisible = False
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.dgvDailyMembersRecord.RowsDefaultCellStyle = DataGridViewCellStyle9
-        Me.dgvDailyMembersRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDailyMembersRecord.Size = New System.Drawing.Size(512, 375)
-        Me.dgvDailyMembersRecord.StandardTab = True
-        Me.dgvDailyMembersRecord.TabIndex = 81
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -279,8 +275,8 @@ Partial Class frmAttendance
         'tpMonthly
         '
         Me.tpMonthly.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.tpMonthly.Controls.Add(Me.gbMonthly)
         Me.tpMonthly.Controls.Add(Me.dgvMonthlyMembersRecord)
+        Me.tpMonthly.Controls.Add(Me.gbMonthly)
         Me.tpMonthly.Controls.Add(Me.Label2)
         Me.tpMonthly.Controls.Add(Me.txtMonthlySearchBox)
         Me.tpMonthly.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -290,6 +286,42 @@ Partial Class frmAttendance
         Me.tpMonthly.Size = New System.Drawing.Size(943, 482)
         Me.tpMonthly.TabIndex = 1
         Me.tpMonthly.Text = "MONTHLY"
+        '
+        'dgvMonthlyMembersRecord
+        '
+        Me.dgvMonthlyMembersRecord.AllowUserToAddRows = False
+        Me.dgvMonthlyMembersRecord.AllowUserToDeleteRows = False
+        Me.dgvMonthlyMembersRecord.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvMonthlyMembersRecord.BackgroundColor = System.Drawing.Color.PaleTurquoise
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMonthlyMembersRecord.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvMonthlyMembersRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvMonthlyMembersRecord.DefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvMonthlyMembersRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgvMonthlyMembersRecord.Location = New System.Drawing.Point(407, 80)
+        Me.dgvMonthlyMembersRecord.Name = "dgvMonthlyMembersRecord"
+        Me.dgvMonthlyMembersRecord.RowHeadersVisible = False
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvMonthlyMembersRecord.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvMonthlyMembersRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvMonthlyMembersRecord.Size = New System.Drawing.Size(512, 375)
+        Me.dgvMonthlyMembersRecord.TabIndex = 97
         '
         'gbMonthly
         '
@@ -397,46 +429,6 @@ Partial Class frmAttendance
         Me.txtMonthlyFullName.Size = New System.Drawing.Size(287, 27)
         Me.txtMonthlyFullName.TabIndex = 91
         '
-        'dgvMonthlyMembersRecord
-        '
-        Me.dgvMonthlyMembersRecord.AllowUserToAddRows = False
-        Me.dgvMonthlyMembersRecord.AllowUserToDeleteRows = False
-        Me.dgvMonthlyMembersRecord.AllowUserToResizeColumns = False
-        Me.dgvMonthlyMembersRecord.AllowUserToResizeRows = False
-        Me.dgvMonthlyMembersRecord.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvMonthlyMembersRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvMonthlyMembersRecord.BackgroundColor = System.Drawing.Color.PaleTurquoise
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(213, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvMonthlyMembersRecord.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
-        Me.dgvMonthlyMembersRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvMonthlyMembersRecord.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvMonthlyMembersRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvMonthlyMembersRecord.Location = New System.Drawing.Point(407, 80)
-        Me.dgvMonthlyMembersRecord.Name = "dgvMonthlyMembersRecord"
-        Me.dgvMonthlyMembersRecord.RowHeadersVisible = False
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.dgvMonthlyMembersRecord.RowsDefaultCellStyle = DataGridViewCellStyle12
-        Me.dgvMonthlyMembersRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMonthlyMembersRecord.Size = New System.Drawing.Size(512, 375)
-        Me.dgvMonthlyMembersRecord.StandardTab = True
-        Me.dgvMonthlyMembersRecord.TabIndex = 85
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -460,10 +452,10 @@ Partial Class frmAttendance
         '
         Me.lblDateTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.lblDateTime.AutoSize = True
-        Me.lblDateTime.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDateTime.Location = New System.Drawing.Point(499, 100)
+        Me.lblDateTime.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDateTime.Location = New System.Drawing.Point(466, 96)
         Me.lblDateTime.Name = "lblDateTime"
-        Me.lblDateTime.Size = New System.Drawing.Size(95, 23)
+        Me.lblDateTime.Size = New System.Drawing.Size(120, 29)
         Me.lblDateTime.TabIndex = 107
         Me.lblDateTime.Text = "DATE TIME"
         '
@@ -491,18 +483,18 @@ Partial Class frmAttendance
         '
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripSeparator2})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(153, 54)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(108, 32)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.ToolStripMenuItem1.Text = "Delete"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(104, 6)
         '
         'frmAttendance
         '
@@ -519,14 +511,14 @@ Partial Class frmAttendance
         Me.tcMembership.ResumeLayout(False)
         Me.tpDaily.ResumeLayout(False)
         Me.tpDaily.PerformLayout()
+        CType(Me.dgvDailyMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbDaily.ResumeLayout(False)
         Me.gbDaily.PerformLayout()
-        CType(Me.dgvDailyMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMonthly.ResumeLayout(False)
         Me.tpMonthly.PerformLayout()
+        CType(Me.dgvMonthlyMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbMonthly.ResumeLayout(False)
         Me.gbMonthly.PerformLayout()
-        CType(Me.dgvMonthlyMembersRecord, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -539,10 +531,8 @@ Partial Class frmAttendance
     Friend WithEvents tpMonthly As System.Windows.Forms.TabPage
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtDailySearchBox As System.Windows.Forms.TextBox
-    Friend WithEvents dgvDailyMembersRecord As System.Windows.Forms.DataGridView
     Friend WithEvents lblDateTime As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents dgvMonthlyMembersRecord As System.Windows.Forms.DataGridView
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtMonthlySearchBox As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -567,4 +557,6 @@ Partial Class frmAttendance
     Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents dgvDailyMembersRecord As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvMonthlyMembersRecord As System.Windows.Forms.DataGridView
 End Class

@@ -1,6 +1,14 @@
 ﻿Public Class frmNewMember
     Public member_id As String
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        For Each ctrl As Control In gbMembers.Controls
+            If ctrl.GetType Is GetType(TextBox) Then
+                If ctrl.Text = "" Then
+                    MsgBox("One of the fields is empty. Please fill it out.", MsgBoxStyle.Exclamation)
+                    Return
+                End If
+            End If
+        Next
         Try
             Dim rdo As String = ""
             query = "SELECT * FROM `members` WHERE `MemberId`='" & lblMemId.Text & "'"
@@ -18,9 +26,13 @@
                    & "', `ContactNumber`='" & txtContactNo.Text & "', `Address`='" & txtAddress.Text _
                    & "', `MembershipType`='" & cmbMembership.Text & "' WHERE `MemberId`='" & lblMemId.Text & "'"
                 updates(query, txtFullName.Text)
+                frmMembers.load_MembersInfo()
+                cleartext(gbMembers)
+                Me.Close()
             Else
                 Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
                 Dim member_id = "MEM" + datetime_now
+                Dim datereg As String = String.Format("{0:MMMMM dd, yyyy}", Date.Now)
 
                 If rdoMale.Checked = True Then
                     rdo = "Male"
@@ -29,20 +41,19 @@
                 End If
 
                 query = "INSERT INTO `members` (`MemberId`, `FullName`, `Sex`, `Birthdate`" _
-                    & ", `ContactNumber`, `Address`, `MembershipType`) VALUES ('" & member_id & "'" _
+                    & ", `ContactNumber`, `Address`, `MembershipType`, `DateRegistered`) VALUES ('" & member_id & "'" _
                     & ", '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text & "'" _
-                    & ", '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "')"
+                    & ", '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "'" _
+                    & ", '" & datereg & "')"
                 create(query, txtFullName.Text)
             End If
             frmMembers.load_MembersInfo()
             cleartext(gbMembers)
-            setup(gbMembers)
-
+            Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-
     Private Sub frmNewMember_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         setup(gbMembers)
     End Sub
@@ -67,7 +78,6 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Close()
     End Sub

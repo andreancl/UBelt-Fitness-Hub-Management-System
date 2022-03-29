@@ -27,6 +27,7 @@ Partial Class frmDashboard
         Me.lbUBFH = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSettings = New System.Windows.Forms.Button()
+        Me.btnLogHistory = New System.Windows.Forms.Button()
         Me.btnAttendance = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnMembers = New System.Windows.Forms.Button()
@@ -66,6 +67,7 @@ Partial Class frmDashboard
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnSettings)
+        Me.Panel1.Controls.Add(Me.btnLogHistory)
         Me.Panel1.Controls.Add(Me.btnAttendance)
         Me.Panel1.Controls.Add(Me.btnLogOut)
         Me.Panel1.Controls.Add(Me.btnMembers)
@@ -89,15 +91,36 @@ Partial Class frmDashboard
         Me.btnSettings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSettings.ForeColor = System.Drawing.Color.White
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
-        Me.btnSettings.Location = New System.Drawing.Point(0, 457)
+        Me.btnSettings.Location = New System.Drawing.Point(0, 507)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
         Me.btnSettings.Size = New System.Drawing.Size(256, 50)
-        Me.btnSettings.TabIndex = 13
+        Me.btnSettings.TabIndex = 14
         Me.btnSettings.Text = "   Settings"
         Me.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSettings.UseVisualStyleBackColor = False
+        '
+        'btnLogHistory
+        '
+        Me.btnLogHistory.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogHistory.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLogHistory.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.btnLogHistory.FlatAppearance.BorderSize = 0
+        Me.btnLogHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnLogHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogHistory.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogHistory.ForeColor = System.Drawing.Color.White
+        Me.btnLogHistory.Image = CType(resources.GetObject("btnLogHistory.Image"), System.Drawing.Image)
+        Me.btnLogHistory.Location = New System.Drawing.Point(0, 457)
+        Me.btnLogHistory.Name = "btnLogHistory"
+        Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
+        Me.btnLogHistory.Size = New System.Drawing.Size(256, 50)
+        Me.btnLogHistory.TabIndex = 13
+        Me.btnLogHistory.Text = "   Log History"
+        Me.btnLogHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogHistory.UseVisualStyleBackColor = False
         '
         'btnAttendance
         '
@@ -197,7 +220,7 @@ Partial Class frmDashboard
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 27)
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 18)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(193, 185)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -209,7 +232,7 @@ Partial Class frmDashboard
         Me.lblUserName.AutoSize = True
         Me.lblUserName.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUserName.ForeColor = System.Drawing.Color.White
-        Me.lblUserName.Location = New System.Drawing.Point(89, 202)
+        Me.lblUserName.Location = New System.Drawing.Point(87, 210)
         Me.lblUserName.Name = "lblUserName"
         Me.lblUserName.Size = New System.Drawing.Size(0, 26)
         Me.lblUserName.TabIndex = 2
@@ -249,7 +272,7 @@ Partial Class frmDashboard
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents lbUBFH As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents btnSettings As System.Windows.Forms.Button
+    Friend WithEvents btnLogHistory As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnMembers As System.Windows.Forms.Button
     Friend WithEvents btnDashboard As System.Windows.Forms.Button
@@ -258,4 +281,5 @@ Partial Class frmDashboard
     Friend WithEvents lblUserName As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnAttendance As System.Windows.Forms.Button
+    Friend WithEvents btnSettings As System.Windows.Forms.Button
 End Class

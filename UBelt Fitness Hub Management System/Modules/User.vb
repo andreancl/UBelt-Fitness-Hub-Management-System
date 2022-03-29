@@ -5,7 +5,7 @@ Module user
         Try
             con.Open()
             Dim query As String
-            query = "SELECT UserTypeId FROM users where Username= '" & username & "' and Password = '" & password & "' "
+            query = "SELECT UserTypeId FROM users where BINARY Username= '" & username & "' and BINARY Password = '" & password & "' "
             cmd = New MySqlCommand(query, con)
             dr = cmd.ExecuteReader
             If dr.HasRows() Then
@@ -16,16 +16,18 @@ Module user
                         .btnDashboard.Visible = True
                         .btnMembers.Visible = True
                         .btnAttendance.Visible = True
+                        .btnLogHistory.Visible = True
                         .btnSettings.Visible = True
                     End With
                     frmDashboard.Show()
                     frmLogIn.Hide()
                 Else
                     frmDashboard.lblUserName.Text = "User"
-                      With frmDashboard
+                    With frmDashboard
                         .btnDashboard.Visible = True
                         .btnMembers.Visible = True
                         .btnAttendance.Visible = True
+                        .btnLogHistory.Visible = False
                         .btnSettings.Visible = False
                     End With
                     frmDashboard.Show()

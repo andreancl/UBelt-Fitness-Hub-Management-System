@@ -1,73 +1,14 @@
 ﻿Imports System.IO
+Imports MySql.Data.MySqlClient
+
 Public Class frmSettings
+    Public con As MySqlConnection = mysqldb()
     Dim Path As String
     Dim BackupPath As String
     Dim DatabaseName As String = "gymdb" + Date.Now.ToString("dd-MM-yyyy-HH-mm-ss")
     Public user_id As String
-    Dim rdo As String = ""
     Dim rdoad As String = ""
     Dim index As Integer = 0
-    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Try
-            query = "SELECT * FROM `users` WHERE `UserId`='" & lblUserId.Text & "'"
-            reloadtxt(query)
-
-            If dt.Rows.Count > 0 Then
-                If rdoMale.Checked = True Then
-                    rdo = "Male"
-                Else
-                    rdo = "Female"
-                End If
-
-                If rdoadmin.Checked = True Then
-                    rdoad = "1"
-                Else
-                    rdoad = "2"
-                End If
-                query = "UPDATE `users` SET  `FullName`='" & txtFullName.Text _
-                   & "', `Sex`='" & rdo & "', `Birthdate`='" & Format(dtpBirthdate.Value, "yyyy-MM-dd") _
-                   & "',  `ContactNumber`='" & txtContactNum.Text & "', `Address`='" & txtAddress.Text _
-                   & "', `Username`='" & txtUsername.Text & "', `Password`='" & txtPassword.Text _
-                   & "' WHERE `UserId`='" & lblUserId.Text & "'"
-                updates(query, txtFullName.Text)
-                load_UserRecords()
-                cleartext(gbUser)
-                setup(gbUser)
-                lblBIS.Text = "CREATE ACCOUNT FORM"
-                lblUserId.Text = ""
-                btnCreate.Text = "Create Account"
-            Else
-                Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
-                Dim user_id = "USER" + datetime_now
-
-                If rdoMale.Checked = True Then
-                    rdo = "Male"
-                Else
-                    rdo = "Female"
-                End If
-
-                If rdoadmin.Checked = True Then
-                    rdoad = "1"
-                Else
-                    rdoad = "2"
-                End If
-
-                query = "INSERT INTO users (`UserId`, `FullName`, `Sex`, `Birthdate`, `ContactNumber`" _
-                & ", `Address`, `Username`, `Password`, `UserTypeId`) VALUES ('" & user_id _
-                & "', '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text _
-                & "', '" & txtContactNum.Text & "', '" & txtAddress.Text _
-                & "', '" & txtUsername.Text & "', '" & txtPassword.Text _
-                & "', '" & rdoad & "')"
-                create(query, txtFullName.Text)
-            End If
-            load_UserRecords()
-            cleartext(gbUser)
-            setup(gbUser)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub tpAccountDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_UserRecords()
 
@@ -77,9 +18,7 @@ Public Class frmSettings
         dgvUserRecords.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Sub load_UserRecords()
-        query = "SELECT `UserId` AS 'UserID',`FullName` as 'Full Name', `Sex` as 'Sex'" _
-       & ", round( ((DATEDIFF( NOW( ) ,  `Birthdate` ) /12) /31))  AS 'Age'" _
-       & ", `ContactNumber` AS 'ContactNumber', `Address` AS 'Address' FROM `users`"
+        query = "SELECT `UserId` AS 'User ID',`FullName` as 'Full Name' FROM `users`"
         reloadDgv(query, dgvUserRecords)
     End Sub
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
@@ -108,7 +47,6 @@ Public Class frmSettings
             MsgBox(ex.Message)
         End Try
     End Sub
-
     Private Sub EditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem1.Click
         Try
             lblBIS.Text = "UPDATE USER INFORMATION"
@@ -118,35 +56,7 @@ Public Class frmSettings
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub lblUserId_TextChanged(sender As Object, e As EventArgs) Handles lblUserId.TextChanged
-        Try
-            query = "SELECT * FROM `users` WHERE `UserId`='" & lblUserId.Text & "'"
-            reloadtxt(query)
-
-            If dt.Rows.Count > 0 Then
-                txtFullName.Text = dt.Rows(0).Item("FullName")
-                dtpBirthdate.Value = dt.Rows(0).Item("Birthdate")
-                txtAddress.Text = dt.Rows(0).Item("Address")
-                txtContactNum.Text = dt.Rows(0).Item("ContactNumber")
-                txtUsername.Text = dt.Rows(0).Item("Username")
-                txtPassword.Text = dt.Rows(0).Item("Password")
-                If dt.Rows(0).Item("Sex") = "Male" Then
-                    rdoMale.Checked = True
-                Else
-                    rdoFemale.Checked = True
-                End If
-
-                If dt.Rows(0).Item("UserTypeId") = "1" Then
-                    rdoadmin.Checked = True
-                Else
-                    rdouser.Checked = True
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
+#Region "BackUp and Restore"
     Sub Backup()
         Try
             If Not Directory.Exists(BackupPath) Then
@@ -193,5 +103,149 @@ Public Class frmSettings
         OpenFileDialog1.Title = "Please Select a File"
         OpenFileDialog1.InitialDirectory = "C:\"
         OpenFileDialog1.ShowDialog()
+    End Sub
+#End Region
+#Region "Create Account"
+
+    Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
+        If chkShowPassword.Checked = False Then
+            txtPassword.PasswordChar = "*"
+        Else
+            txtPassword.PasswordChar = ""
+        End If
+    End Sub
+    Private Sub chkSecretAnswer_CheckedChanged(sender As Object, e As EventArgs) Handles chkSecretAnswer.CheckedChanged
+        If chkSecretAnswer.Checked = False Then
+            txtSecretAnswer.PasswordChar = "*"
+        Else
+            txtSecretAnswer.PasswordChar = ""
+        End If
+    End Sub
+#End Region
+    Private Sub lblUserId_TextChanged(sender As Object, e As EventArgs) Handles lblUserId.TextChanged
+        Try
+            query = "SELECT * FROM `users` WHERE `UserId`='" & lblUserId.Text & "'"
+            reloadtxt(query)
+
+            If dt.Rows.Count > 0 Then
+                txtFullName.Text = dt.Rows(0).Item("FullName")
+                txtUsername.Text = dt.Rows(0).Item("Username")
+                txtPassword.Text = dt.Rows(0).Item("Password")
+                cmbSecretQuestion.Text = dt.Rows(0).Item("SecretQuestion")
+                txtSecretAnswer.Text = dt.Rows(0).Item("SecretAnswer")
+                If dt.Rows(0).Item("UserTypeId") = "1" Then
+                    rdoadmin.Checked = True
+                Else
+                    rdouser.Checked = True
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub CheckAccountFields()
+        If txtFullName.Text = "" And txtUsername.Text = "" And txtPassword.Text = "" And rdoad = "" And cmbSecretQuestion.Text = "" And txtSecretAnswer.Text = "" Then
+            MsgBox("Fill up your account details", MsgBoxStyle.Critical, "ATTENTION!")
+            txtFullName.Focus()
+        ElseIf txtFullName.Text = "" Then
+            MsgBox("No Full Name Found!", MsgBoxStyle.Critical, "Error")
+            txtFullName.Focus()
+        ElseIf txtUsername.Text = "" Then
+            MsgBox("No Username Found!", MsgBoxStyle.Critical, "Error")
+            txtUsername.Focus()
+        ElseIf txtPassword.Text = "" Then
+            MsgBox("No Password Found!", MsgBoxStyle.Critical, "Error")
+            txtPassword.Focus()
+        ElseIf rdoadmin.Text = "" Or rdouser.Text = "" Then
+            MsgBox("Please Select User Type", MsgBoxStyle.Critical, "Error")
+            rdoadmin.Focus()
+        ElseIf cmbSecretQuestion.Text = "" Then
+            MsgBox("No Secret Question Found!", MsgBoxStyle.Critical, "Error")
+            cmbSecretQuestion.Focus()
+        ElseIf txtSecretAnswer.Text = "" Then
+            MsgBox("No Secret Answer Found!", MsgBoxStyle.Critical, "Error")
+            txtSecretAnswer.Focus()
+        Else
+            CreateAccount()
+        End If
+    End Sub
+    Private Sub CreateAccount()
+        Try
+            query = "SELECT * FROM `users` WHERE `UserId`='" & lblUserId.Text & "'"
+            reloadtxt(query)
+
+            If dt.Rows.Count > 0 Then
+                If rdoadmin.Checked = True Then
+                    rdoad = "1"
+                Else
+                    rdoad = "2"
+                End If
+                query = "UPDATE `users` SET  `FullName`='" & txtFullName.Text _
+                   & "', `Username`='" & txtUsername.Text & "', `Password`='" & txtPassword.Text _
+                   & "', `SecretQuestion`='" & cmbSecretQuestion.Text & "', `SecretAnswer`='" & txtSecretAnswer.Text _
+                   & "' WHERE `UserId`='" & lblUserId.Text & "'"
+                updates(query, txtFullName.Text)
+                load_UserRecords()
+                cleartext(gbUser)
+                setup(gbUser)
+                lblBIS.Text = "CREATE ACCOUNT FORM"
+                lblUserId.Text = ""
+                btnCreate.Text = "Create Account"
+            Else
+                Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
+                Dim user_id = "USER" + datetime_now
+
+                If rdoadmin.Checked = True Then
+                    rdoad = "1"
+                Else
+                    rdoad = "2"
+                End If
+
+                query = "INSERT INTO users (`UserId`, `FullName`, `Username`, `Password`, `SecretQuestion`" _
+                & ", `SecretAnswer`, `UserTypeId`) VALUES ('" & user_id & "', '" & txtFullName.Text _
+                & "', '" & txtUsername.Text & "', '" & txtPassword.Text & "', '" & cmbSecretQuestion.Text _
+                & "', '" & txtSecretAnswer.Text & "', '" & rdoad & "')"
+                create(query, txtFullName.Text)
+                CheckingUsername()
+            End If
+            load_UserRecords()
+            cleartext(gbUser)
+            setup(gbUser)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub CheckingUsername()
+        Try
+            con.Open()
+            Dim query As String
+            query = "SELECT Username FROM users WHERE Username = '" & txtUsername.Text & "'"
+            cmd = New MySqlCommand(query, con)
+            dr = cmd.ExecuteReader()
+            Dim count As Integer
+            count = 0
+            While dr.Read
+                count = count + 1
+            End While
+            Select Case count
+                Case 1
+                    MsgBox("Username is already exist. Please try another username!", MsgBoxStyle.Critical, "ATTENTION")
+                Case Else
+                    con.Close()
+                    CreateAccount()
+            End Select
+        Catch ex As Exception
+            MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
+        Finally
+            dr.Close()
+            con.Close()
+        End Try
+    End Sub
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        CheckAccountFields()
+    End Sub
+
+    Private Sub gbUser_Enter(sender As Object, e As EventArgs) Handles gbUser.Enter
+
     End Sub
 End Class

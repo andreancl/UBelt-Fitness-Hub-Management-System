@@ -10,50 +10,7 @@ Module crud
     Public result As String
     Public add As String
     Public edit As String
-
-    Public Function ExitSystem()
-        Dim iexit As DialogResult
-        iexit = MessageBox.Show("Are you sure you want to log out?", "Gym Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If iexit = DialogResult.Yes Then
-            Application.Exit()
-        End If
-        End
-    End Function
-    Public Sub closeChildForm()
-        For Each frm As Form In frmDashboard.MdiChildren()
-            frm.Close()
-        Next
-    End Sub
-    Public Sub showForm(frm As Form)
-        With frm
-            .MdiParent = frmDashboard
-            .Show()
-        End With
-    End Sub
-    Public Sub cleartext(ByVal obj As Object)
-        For Each ctrl As Control In obj.Controls
-            If ctrl.GetType Is GetType(TextBox) Then
-                ctrl.Text = Nothing
-            End If
-        Next
-        For Each ctrl As Control In obj.Controls
-            If ctrl.GetType Is GetType(RadioButton) Then
-                ctrl.Controls.Clear()
-            End If
-        Next
-    End Sub
-    Public Sub setup(ByVal obj As Object)
-        For Each ctrl As Control In obj.Controls
-            If ctrl.GetType Is GetType(ComboBox) Then
-                ctrl.Text = "----Select-----"
-            End If
-        Next
-        For Each ctrl As Control In obj.Controls
-            If ctrl.GetType Is GetType(DateTimePicker) Then
-                ctrl.Text = Now
-            End If
-        Next
-    End Sub
+    
 #Region "crud"
     Public Sub reloadtxt(ByVal query As String)
         Try

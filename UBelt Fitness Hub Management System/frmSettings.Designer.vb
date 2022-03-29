@@ -30,31 +30,26 @@ Partial Class frmSettings
         Me.tpAccount = New System.Windows.Forms.TabPage()
         Me.tcAccountSettings = New System.Windows.Forms.TabControl()
         Me.tpAccountDetails = New System.Windows.Forms.TabPage()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblUserId = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblBIS = New System.Windows.Forms.Label()
         Me.gbUser = New System.Windows.Forms.GroupBox()
-        Me.rdoFemale = New System.Windows.Forms.RadioButton()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.rdoMale = New System.Windows.Forms.RadioButton()
+        Me.chkSecretAnswer = New System.Windows.Forms.CheckBox()
+        Me.txtSecretAnswer = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cmbSecretQuestion = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.chkShowPassword = New System.Windows.Forms.CheckBox()
         Me.rdouser = New System.Windows.Forms.RadioButton()
-        Me.dtpBirthdate = New System.Windows.Forms.DateTimePicker()
         Me.rdoadmin = New System.Windows.Forms.RadioButton()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtContactNum = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtFullName = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvUserRecords = New System.Windows.Forms.DataGridView()
         Me.tcSettings = New System.Windows.Forms.TabControl()
@@ -77,7 +72,6 @@ Partial Class frmSettings
         Me.tpAccount.SuspendLayout()
         Me.tcAccountSettings.SuspendLayout()
         Me.tpAccountDetails.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.gbUser.SuspendLayout()
         CType(Me.dgvUserRecords, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +107,6 @@ Partial Class frmSettings
         'tpAccountDetails
         '
         Me.tpAccountDetails.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.tpAccountDetails.Controls.Add(Me.Panel2)
         Me.tpAccountDetails.Controls.Add(Me.Panel1)
         Me.tpAccountDetails.Controls.Add(Me.gbUser)
         Me.tpAccountDetails.Controls.Add(Me.dgvUserRecords)
@@ -124,36 +117,16 @@ Partial Class frmSettings
         Me.tpAccountDetails.TabIndex = 0
         Me.tpAccountDetails.Text = "Account Details"
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Location = New System.Drawing.Point(483, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(456, 77)
-        Me.Panel2.TabIndex = 89
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(3, 17)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(287, 42)
-        Me.Label13.TabIndex = 1
-        Me.Label13.Text = "ACCOUNT DETAILS"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.Panel1.Controls.Add(Me.lblUserId)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.lblBIS)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(460, 77)
-        Me.Panel1.TabIndex = 88
+        Me.Panel1.Size = New System.Drawing.Size(493, 77)
+        Me.Panel1.TabIndex = 91
         '
         'lblUserId
         '
@@ -188,44 +161,27 @@ Partial Class frmSettings
         '
         'gbUser
         '
-        Me.gbUser.Controls.Add(Me.rdoFemale)
         Me.gbUser.Controls.Add(Me.btnCreate)
-        Me.gbUser.Controls.Add(Me.rdoMale)
+        Me.gbUser.Controls.Add(Me.chkSecretAnswer)
+        Me.gbUser.Controls.Add(Me.txtSecretAnswer)
+        Me.gbUser.Controls.Add(Me.Label6)
+        Me.gbUser.Controls.Add(Me.cmbSecretQuestion)
+        Me.gbUser.Controls.Add(Me.Label5)
+        Me.gbUser.Controls.Add(Me.chkShowPassword)
         Me.gbUser.Controls.Add(Me.rdouser)
-        Me.gbUser.Controls.Add(Me.dtpBirthdate)
         Me.gbUser.Controls.Add(Me.rdoadmin)
         Me.gbUser.Controls.Add(Me.Label4)
-        Me.gbUser.Controls.Add(Me.Label11)
-        Me.gbUser.Controls.Add(Me.txtContactNum)
         Me.gbUser.Controls.Add(Me.txtPassword)
         Me.gbUser.Controls.Add(Me.txtFullName)
         Me.gbUser.Controls.Add(Me.txtUsername)
-        Me.gbUser.Controls.Add(Me.Label14)
         Me.gbUser.Controls.Add(Me.Label3)
-        Me.gbUser.Controls.Add(Me.Label15)
-        Me.gbUser.Controls.Add(Me.txtAddress)
         Me.gbUser.Controls.Add(Me.Label1)
-        Me.gbUser.Controls.Add(Me.Label10)
         Me.gbUser.Controls.Add(Me.Label12)
-        Me.gbUser.Location = New System.Drawing.Point(20, 83)
+        Me.gbUser.Location = New System.Drawing.Point(6, 79)
         Me.gbUser.Name = "gbUser"
-        Me.gbUser.Size = New System.Drawing.Size(439, 355)
-        Me.gbUser.TabIndex = 87
+        Me.gbUser.Size = New System.Drawing.Size(487, 355)
+        Me.gbUser.TabIndex = 90
         Me.gbUser.TabStop = False
-        '
-        'rdoFemale
-        '
-        Me.rdoFemale.AutoSize = True
-        Me.rdoFemale.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoFemale.ForeColor = System.Drawing.Color.White
-        Me.rdoFemale.Location = New System.Drawing.Point(242, 60)
-        Me.rdoFemale.Name = "rdoFemale"
-        Me.rdoFemale.Size = New System.Drawing.Size(74, 23)
-        Me.rdoFemale.TabIndex = 111
-        Me.rdoFemale.TabStop = True
-        Me.rdoFemale.Text = "Female"
-        Me.rdoFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.rdoFemale.UseVisualStyleBackColor = True
         '
         'btnCreate
         '
@@ -234,7 +190,7 @@ Partial Class frmSettings
         Me.btnCreate.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreate.ForeColor = System.Drawing.Color.White
         Me.btnCreate.Image = CType(resources.GetObject("btnCreate.Image"), System.Drawing.Image)
-        Me.btnCreate.Location = New System.Drawing.Point(130, 301)
+        Me.btnCreate.Location = New System.Drawing.Point(153, 304)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(186, 39)
         Me.btnCreate.TabIndex = 55
@@ -243,26 +199,88 @@ Partial Class frmSettings
         Me.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'rdoMale
+        'chkSecretAnswer
         '
-        Me.rdoMale.AutoSize = True
-        Me.rdoMale.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoMale.ForeColor = System.Drawing.Color.White
-        Me.rdoMale.Location = New System.Drawing.Point(176, 60)
-        Me.rdoMale.Name = "rdoMale"
-        Me.rdoMale.Size = New System.Drawing.Size(60, 23)
-        Me.rdoMale.TabIndex = 110
-        Me.rdoMale.TabStop = True
-        Me.rdoMale.Text = "Male"
-        Me.rdoMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.rdoMale.UseVisualStyleBackColor = True
+        Me.chkSecretAnswer.AutoSize = True
+        Me.chkSecretAnswer.BackColor = System.Drawing.Color.Transparent
+        Me.chkSecretAnswer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSecretAnswer.ForeColor = System.Drawing.Color.White
+        Me.chkSecretAnswer.Location = New System.Drawing.Point(174, 265)
+        Me.chkSecretAnswer.Name = "chkSecretAnswer"
+        Me.chkSecretAnswer.Size = New System.Drawing.Size(171, 25)
+        Me.chkSecretAnswer.TabIndex = 115
+        Me.chkSecretAnswer.TabStop = False
+        Me.chkSecretAnswer.Text = "Show Secret Answer"
+        Me.chkSecretAnswer.UseVisualStyleBackColor = False
+        '
+        'txtSecretAnswer
+        '
+        Me.txtSecretAnswer.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSecretAnswer.Location = New System.Drawing.Point(174, 231)
+        Me.txtSecretAnswer.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txtSecretAnswer.Name = "txtSecretAnswer"
+        Me.txtSecretAnswer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtSecretAnswer.Size = New System.Drawing.Size(294, 27)
+        Me.txtSecretAnswer.TabIndex = 114
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(17, 232)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(152, 25)
+        Me.Label6.TabIndex = 113
+        Me.Label6.Text = "Secret Answer"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cmbSecretQuestion
+        '
+        Me.cmbSecretQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSecretQuestion.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbSecretQuestion.FormattingEnabled = True
+        Me.cmbSecretQuestion.Items.AddRange(New Object() {"", "What is your favorite color?", "What is your contact number?", "When is your birthday?", "What is love for you?", "Where were you born ?", "What is the meaning of life?", "What is your gender?", "What is your civil status in life?", "What is your dream in life?", "What makes you happy?", "What makes you sad?", "What makes you mad?", "What is your job?", "What is your favorite song?", "What is your favorite band?", "Who is your favorite singer?"})
+        Me.cmbSecretQuestion.Location = New System.Drawing.Point(174, 196)
+        Me.cmbSecretQuestion.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmbSecretQuestion.Name = "cmbSecretQuestion"
+        Me.cmbSecretQuestion.Size = New System.Drawing.Size(294, 27)
+        Me.cmbSecretQuestion.TabIndex = 112
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(17, 196)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(152, 27)
+        Me.Label5.TabIndex = 111
+        Me.Label5.Text = "Secret Question"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'chkShowPassword
+        '
+        Me.chkShowPassword.AutoSize = True
+        Me.chkShowPassword.BackColor = System.Drawing.Color.Transparent
+        Me.chkShowPassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowPassword.ForeColor = System.Drawing.Color.White
+        Me.chkShowPassword.Location = New System.Drawing.Point(174, 129)
+        Me.chkShowPassword.Name = "chkShowPassword"
+        Me.chkShowPassword.Size = New System.Drawing.Size(138, 25)
+        Me.chkShowPassword.TabIndex = 110
+        Me.chkShowPassword.TabStop = False
+        Me.chkShowPassword.Text = "Show Password"
+        Me.chkShowPassword.UseVisualStyleBackColor = False
         '
         'rdouser
         '
         Me.rdouser.AutoSize = True
         Me.rdouser.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdouser.ForeColor = System.Drawing.Color.White
-        Me.rdouser.Location = New System.Drawing.Point(251, 263)
+        Me.rdouser.Location = New System.Drawing.Point(252, 165)
         Me.rdouser.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rdouser.Name = "rdouser"
         Me.rdouser.Size = New System.Drawing.Size(57, 23)
@@ -271,24 +289,12 @@ Partial Class frmSettings
         Me.rdouser.Text = "User"
         Me.rdouser.UseVisualStyleBackColor = True
         '
-        'dtpBirthdate
-        '
-        Me.dtpBirthdate.CustomFormat = "yyyy-MM-dd"
-        Me.dtpBirthdate.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBirthdate.Location = New System.Drawing.Point(173, 92)
-        Me.dtpBirthdate.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.dtpBirthdate.Name = "dtpBirthdate"
-        Me.dtpBirthdate.Size = New System.Drawing.Size(221, 27)
-        Me.dtpBirthdate.TabIndex = 102
-        Me.dtpBirthdate.Value = New Date(2021, 10, 16, 0, 0, 0, 0)
-        '
         'rdoadmin
         '
         Me.rdoadmin.AutoSize = True
         Me.rdoadmin.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdoadmin.ForeColor = System.Drawing.Color.White
-        Me.rdoadmin.Location = New System.Drawing.Point(176, 263)
+        Me.rdoadmin.Location = New System.Drawing.Point(177, 165)
         Me.rdoadmin.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rdoadmin.Name = "rdoadmin"
         Me.rdoadmin.Size = New System.Drawing.Size(68, 23)
@@ -302,148 +308,77 @@ Partial Class frmSettings
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(47, 27)
+        Me.Label4.Location = New System.Drawing.Point(17, 26)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(121, 25)
+        Me.Label4.Size = New System.Drawing.Size(152, 25)
         Me.Label4.TabIndex = 28
         Me.Label4.Text = "Full Name"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label11.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(47, 161)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(121, 25)
-        Me.Label11.TabIndex = 47
-        Me.Label11.Text = "Address"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtContactNum
-        '
-        Me.txtContactNum.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNum.Location = New System.Drawing.Point(173, 127)
-        Me.txtContactNum.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.txtContactNum.Name = "txtContactNum"
-        Me.txtContactNum.Size = New System.Drawing.Size(221, 27)
-        Me.txtContactNum.TabIndex = 103
-        '
         'txtPassword
         '
         Me.txtPassword.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(173, 226)
+        Me.txtPassword.Location = New System.Drawing.Point(174, 95)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(221, 27)
+        Me.txtPassword.Size = New System.Drawing.Size(294, 27)
         Me.txtPassword.TabIndex = 106
         '
         'txtFullName
         '
         Me.txtFullName.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFullName.Location = New System.Drawing.Point(173, 26)
+        Me.txtFullName.Location = New System.Drawing.Point(174, 25)
         Me.txtFullName.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtFullName.Name = "txtFullName"
-        Me.txtFullName.Size = New System.Drawing.Size(221, 27)
+        Me.txtFullName.Size = New System.Drawing.Size(294, 27)
         Me.txtFullName.TabIndex = 31
         '
         'txtUsername
         '
         Me.txtUsername.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(173, 193)
+        Me.txtUsername.Location = New System.Drawing.Point(174, 60)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(221, 27)
+        Me.txtUsername.Size = New System.Drawing.Size(294, 27)
         Me.txtUsername.TabIndex = 105
-        '
-        'Label14
-        '
-        Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label14.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(47, 93)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(121, 25)
-        Me.Label14.TabIndex = 38
-        Me.Label14.Text = "Birthdate"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(47, 227)
+        Me.Label3.Location = New System.Drawing.Point(17, 96)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(121, 25)
+        Me.Label3.Size = New System.Drawing.Size(152, 25)
         Me.Label3.TabIndex = 57
         Me.Label3.Text = "Password"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label15
-        '
-        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label15.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(47, 60)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(121, 25)
-        Me.Label15.TabIndex = 37
-        Me.Label15.Text = "Sex"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtAddress
-        '
-        Me.txtAddress.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAddress.Location = New System.Drawing.Point(173, 160)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.txtAddress.Multiline = True
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(221, 27)
-        Me.txtAddress.TabIndex = 104
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(47, 194)
+        Me.Label1.Location = New System.Drawing.Point(17, 61)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 25)
+        Me.Label1.Size = New System.Drawing.Size(152, 25)
         Me.Label1.TabIndex = 56
         Me.Label1.Text = "Username"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Label10.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(47, 128)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 25)
-        Me.Label10.TabIndex = 45
-        Me.Label10.Text = "Contact No."
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label12
         '
         Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.Label12.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(48, 261)
+        Me.Label12.Location = New System.Drawing.Point(17, 163)
         Me.Label12.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(120, 25)
+        Me.Label12.Size = New System.Drawing.Size(152, 25)
         Me.Label12.TabIndex = 64
         Me.Label12.Text = "User Type"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -477,14 +412,14 @@ Partial Class frmSettings
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvUserRecords.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvUserRecords.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvUserRecords.Location = New System.Drawing.Point(486, 95)
+        Me.dgvUserRecords.Location = New System.Drawing.Point(531, 51)
         Me.dgvUserRecords.Name = "dgvUserRecords"
         Me.dgvUserRecords.RowHeadersVisible = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.dgvUserRecords.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvUserRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUserRecords.Size = New System.Drawing.Size(439, 343)
+        Me.dgvUserRecords.Size = New System.Drawing.Size(376, 371)
         Me.dgvUserRecords.StandardTab = True
         Me.dgvUserRecords.TabIndex = 86
         '
@@ -493,7 +428,7 @@ Partial Class frmSettings
         Me.tcSettings.Controls.Add(Me.tpAccount)
         Me.tcSettings.Controls.Add(Me.tpBaR)
         Me.tcSettings.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tcSettings.Location = New System.Drawing.Point(108, 101)
+        Me.tcSettings.Location = New System.Drawing.Point(79, 95)
         Me.tcSettings.Name = "tcSettings"
         Me.tcSettings.SelectedIndex = 0
         Me.tcSettings.Size = New System.Drawing.Size(951, 518)
@@ -586,7 +521,7 @@ Partial Class frmSettings
         Me.lblResRec.AutoSize = True
         Me.lblResRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblResRec.Font = New System.Drawing.Font("Calibri", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResRec.Location = New System.Drawing.Point(48, 17)
+        Me.lblResRec.Location = New System.Drawing.Point(19, 11)
         Me.lblResRec.Name = "lblResRec"
         Me.lblResRec.Size = New System.Drawing.Size(166, 45)
         Me.lblResRec.TabIndex = 108
@@ -607,24 +542,24 @@ Partial Class frmSettings
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem1, Me.DeleteToolStripMenuItem, Me.ToolStripSeparator2})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 76)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 54)
         '
         'EditToolStripMenuItem1
         '
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(104, 6)
         '
         'OpenFileDialog1
         '
@@ -644,8 +579,6 @@ Partial Class frmSettings
         Me.tpAccount.ResumeLayout(False)
         Me.tcAccountSettings.ResumeLayout(False)
         Me.tpAccountDetails.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.gbUser.ResumeLayout(False)
@@ -668,39 +601,10 @@ Partial Class frmSettings
     Friend WithEvents lblResRec As System.Windows.Forms.Label
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents tcAccountSettings As System.Windows.Forms.TabControl
-    Friend WithEvents tpAccountDetails As System.Windows.Forms.TabPage
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lblUserId As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents lblBIS As System.Windows.Forms.Label
-    Friend WithEvents gbUser As System.Windows.Forms.GroupBox
-    Friend WithEvents rdoFemale As System.Windows.Forms.RadioButton
-    Friend WithEvents btnCreate As System.Windows.Forms.Button
-    Friend WithEvents rdoMale As System.Windows.Forms.RadioButton
-    Friend WithEvents rdouser As System.Windows.Forms.RadioButton
-    Friend WithEvents dtpBirthdate As System.Windows.Forms.DateTimePicker
-    Friend WithEvents rdoadmin As System.Windows.Forms.RadioButton
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtContactNum As System.Windows.Forms.TextBox
-    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
-    Friend WithEvents txtFullName As System.Windows.Forms.TextBox
-    Friend WithEvents txtUsername As System.Windows.Forms.TextBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents txtAddress As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents dgvUserRecords As System.Windows.Forms.DataGridView
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -709,4 +613,28 @@ Partial Class frmSettings
     Friend WithEvents btnBackup As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents tcAccountSettings As System.Windows.Forms.TabControl
+    Friend WithEvents tpAccountDetails As System.Windows.Forms.TabPage
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents lblUserId As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblBIS As System.Windows.Forms.Label
+    Friend WithEvents gbUser As System.Windows.Forms.GroupBox
+    Friend WithEvents btnCreate As System.Windows.Forms.Button
+    Friend WithEvents chkSecretAnswer As System.Windows.Forms.CheckBox
+    Friend WithEvents txtSecretAnswer As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents cmbSecretQuestion As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents chkShowPassword As System.Windows.Forms.CheckBox
+    Friend WithEvents rdouser As System.Windows.Forms.RadioButton
+    Friend WithEvents rdoadmin As System.Windows.Forms.RadioButton
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents txtFullName As System.Windows.Forms.TextBox
+    Friend WithEvents txtUsername As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents dgvUserRecords As System.Windows.Forms.DataGridView
 End Class

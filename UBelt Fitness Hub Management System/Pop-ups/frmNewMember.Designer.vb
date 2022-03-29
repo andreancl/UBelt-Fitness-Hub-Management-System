@@ -282,7 +282,7 @@ Partial Class frmNewMember
         '
         Me.cmbMembership.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMembership.FormattingEnabled = True
-        Me.cmbMembership.Items.AddRange(New Object() {"Daily", "Monthly"})
+        Me.cmbMembership.Items.AddRange(New Object() {"", "Daily", "Monthly"})
         Me.cmbMembership.Location = New System.Drawing.Point(146, 202)
         Me.cmbMembership.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.cmbMembership.Name = "cmbMembership"

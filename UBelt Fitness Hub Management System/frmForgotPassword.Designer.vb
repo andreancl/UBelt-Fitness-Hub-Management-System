@@ -33,6 +33,7 @@ Partial Class frmForgotPassword
         Me.lblSecretQuestion = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Panel = New System.Windows.Forms.Panel()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class frmForgotPassword
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnBack)
         Me.GroupBox1.Controls.Add(Me.btnSubmit)
         Me.GroupBox1.Controls.Add(Me.txtSecretAnswer)
         Me.GroupBox1.Controls.Add(Me.cmbSecretQuestion)
@@ -74,9 +76,9 @@ Partial Class frmForgotPassword
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.Color.Black
-        Me.btnSubmit.Location = New System.Drawing.Point(200, 216)
+        Me.btnSubmit.Location = New System.Drawing.Point(209, 205)
         Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(144, 27)
+        Me.btnSubmit.Size = New System.Drawing.Size(109, 32)
         Me.btnSubmit.TabIndex = 4
         Me.btnSubmit.TabStop = False
         Me.btnSubmit.Text = "SUBMIT"
@@ -174,6 +176,21 @@ Partial Class frmForgotPassword
         Me.Panel.Size = New System.Drawing.Size(549, 104)
         Me.Panel.TabIndex = 4
         '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.Location = New System.Drawing.Point(350, 204)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(109, 33)
+        Me.btnBack.TabIndex = 12
+        Me.btnBack.TabStop = False
+        Me.btnBack.Text = "BACK"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'frmForgotPassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -202,4 +219,5 @@ Partial Class frmForgotPassword
     Friend WithEvents lblSecretQuestion As System.Windows.Forms.Label
     Friend WithEvents lblUsername As System.Windows.Forms.Label
     Friend WithEvents Panel As System.Windows.Forms.Panel
+    Friend WithEvents btnBack As System.Windows.Forms.Button
 End Class

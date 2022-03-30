@@ -1,6 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class frmForgotPassword
     Public con As MySqlConnection = mysqldb()
+    Public Sub Reset()
+        txtUsername.Focus()
+        txtUsername.Clear()
+        cmbSecretQuestion.Text = ""
+        txtSecretAnswer.Clear()
+        chckboxSecretAnswer.Checked = False
+    End Sub
     Private Sub chckboxSecretAnswer_CheckedChanged(sender As Object, e As EventArgs) Handles chckboxSecretAnswer.CheckedChanged
         If chckboxSecretAnswer.Checked = False Then
             txtSecretAnswer.PasswordChar = "*"
@@ -60,5 +67,29 @@ Public Class frmForgotPassword
             cmbSecretQuestion.Text = ""
         End If
         con.Close()
+    End Sub
+    Private Sub frmForgotPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Reset()
+    End Sub
+    Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsername.KeyPress
+        If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtSecretAnswer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSecretAnswer.KeyPress
+        If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Reset()
+        Me.Hide()
+        frmLogIn.Show()
+        frmLogIn.Reset()
     End Sub
 End Class

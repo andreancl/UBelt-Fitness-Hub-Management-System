@@ -16,7 +16,6 @@ Public Class frmLogIn
             e.Handled = True
         End If
     End Sub
-
     Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
         If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False

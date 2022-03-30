@@ -43,11 +43,6 @@ Public Class frmMembers
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         query = "DELETE FROM members WHERE MemberId = '" & dgvMembersRecord.CurrentRow.Cells(0).Value & "'"
         deletes(query, dgvMembersRecord.CurrentRow.Cells(1).Value)
-
-        query = "SELECT `MemberId` AS 'Member ID', `FullName` AS 'Last Name', `Sex` AS 'Sex'" _
-           & ", round( ((DATEDIFF( NOW( ) ,  `Birthdate` ) /12) /31))  AS 'Age'" _
-           & ", `ContactNumber` AS 'Contact Number', `Address` AS 'Address'" _
-           & ", `MembershipType` AS 'Membership Type', `DateRegistered` AS `Date Registered` FROM `members`"
         reloadDgv(query, dgvMembersRecord)
     End Sub
     Private Sub dgvMembersRecords_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvMembersRecord.CellToolTipTextNeeded

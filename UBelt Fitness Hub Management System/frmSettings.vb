@@ -143,7 +143,32 @@ Public Class frmSettings
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Sub CheckAccountFields()
+    Private Sub CheckingUsername()
+        Try
+            con.Open()
+            Dim query As String
+            query = "SELECT Username FROM users WHERE Username = '" & txtUsername.Text & "'"
+            cmd = New MySqlCommand(query, con)
+            dr = cmd.ExecuteReader()
+            Dim count As Integer
+            count = 0
+            While dr.Read
+                count = count + 1
+            End While
+            Select Case count
+                Case 1
+                    MsgBox("Username is already exist. Please try another username!", MsgBoxStyle.Critical, "ATTENTION")
+                Case Else
+                    con.Close()
+            End Select
+        Catch ex As Exception
+            MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
+        Finally
+            dr.Close()
+            con.Close()
+        End Try
+    End Sub
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         If txtFullName.Text = "" And txtUsername.Text = "" And txtPassword.Text = "" And rdoad = "" And cmbSecretQuestion.Text = "" And txtSecretAnswer.Text = "" Then
             MsgBox("Fill up your account details", MsgBoxStyle.Critical, "ATTENTION!")
             txtFullName.Focus()
@@ -166,10 +191,10 @@ Public Class frmSettings
             MsgBox("No Secret Answer Found!", MsgBoxStyle.Critical, "Error")
             txtSecretAnswer.Focus()
         Else
-            CreateAccount()
+            CreatingAccount()
         End If
     End Sub
-    Private Sub CreateAccount()
+    Private Sub CreatingAccount()
         Try
             query = "SELECT * FROM `users` WHERE `UserId`='" & lblUserId.Text & "'"
             reloadtxt(query)
@@ -214,38 +239,5 @@ Public Class frmSettings
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Sub
-    Private Sub CheckingUsername()
-        Try
-            con.Open()
-            Dim query As String
-            query = "SELECT Username FROM users WHERE Username = '" & txtUsername.Text & "'"
-            cmd = New MySqlCommand(query, con)
-            dr = cmd.ExecuteReader()
-            Dim count As Integer
-            count = 0
-            While dr.Read
-                count = count + 1
-            End While
-            Select Case count
-                Case 1
-                    MsgBox("Username is already exist. Please try another username!", MsgBoxStyle.Critical, "ATTENTION")
-                Case Else
-                    con.Close()
-                    CreateAccount()
-            End Select
-        Catch ex As Exception
-            MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
-        Finally
-            dr.Close()
-            con.Close()
-        End Try
-    End Sub
-    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        CheckAccountFields()
-    End Sub
-
-    Private Sub gbUser_Enter(sender As Object, e As EventArgs) Handles gbUser.Enter
-
     End Sub
 End Class

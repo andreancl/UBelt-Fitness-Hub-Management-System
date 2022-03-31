@@ -24,6 +24,7 @@ Partial Class frmForgotPassword
     Private Sub InitializeComponent()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.txtSecretAnswer = New System.Windows.Forms.TextBox()
         Me.cmbSecretQuestion = New System.Windows.Forms.ComboBox()
@@ -33,7 +34,6 @@ Partial Class frmForgotPassword
         Me.lblSecretQuestion = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Panel = New System.Windows.Forms.Panel()
-        Me.btnBack = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -62,11 +62,26 @@ Partial Class frmForgotPassword
         Me.GroupBox1.Controls.Add(Me.lblSecretQuestion)
         Me.GroupBox1.Controls.Add(Me.lblUsername)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 114)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 114)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(517, 289)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.Location = New System.Drawing.Point(350, 204)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(109, 33)
+        Me.btnBack.TabIndex = 12
+        Me.btnBack.TabStop = False
+        Me.btnBack.Text = "BACK"
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnSubmit
         '
@@ -175,21 +190,6 @@ Partial Class frmForgotPassword
         Me.Panel.Name = "Panel"
         Me.Panel.Size = New System.Drawing.Size(549, 104)
         Me.Panel.TabIndex = 4
-        '
-        'btnBack
-        '
-        Me.btnBack.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(350, 204)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(109, 33)
-        Me.btnBack.TabIndex = 12
-        Me.btnBack.TabStop = False
-        Me.btnBack.Text = "BACK"
-        Me.btnBack.UseVisualStyleBackColor = False
         '
         'frmForgotPassword
         '

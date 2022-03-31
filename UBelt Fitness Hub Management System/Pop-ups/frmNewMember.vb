@@ -54,7 +54,7 @@ Public Class frmNewMember
             Else
                 Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
                 Dim member_id = "MEM" + datetime_now
-                Dim datereg As String = String.Format("{0:MMMMM dd, yyyy}", Date.Now)
+                Dim datereg As String = String.Format("{0:ddMMyyyhh}", Date.Now)
 
                 If rdoMale.Checked = True Then
                     rdo = "Male"

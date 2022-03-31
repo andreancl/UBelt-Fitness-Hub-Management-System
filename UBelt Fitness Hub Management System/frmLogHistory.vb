@@ -15,11 +15,5 @@
         & " FROM monthly AS m"
         reloadDgv(query, dgvMembersRecord)
     End Sub
-
-    Private Sub txtSearchBox_TextChanged(sender As Object, e As EventArgs)
-        query = "SELECT `MemberId` AS 'Member ID', `FullName` AS 'Full Name', `MembershipType` AS 'Membership Type'" _
-             & ", `Date` AS `Date`, `TimeLogIn` AS 'Time Log In', `TimeLogOut` As 'TimeLogOut' FROM `daily` WHERE FullName LIKE '%" & txtSearchBox.Text & "%', FROM `monthly` WHERE FullName LIKE '%" & txtSearchBox.Text & "%'"
-        reloadDgv(query, dgvMembersRecord)
-    End Sub
 End Class
 

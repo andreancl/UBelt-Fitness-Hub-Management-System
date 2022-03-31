@@ -24,6 +24,7 @@ Public Class frmSettings
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         query = "DELETE FROM users WHERE UserId = '" & dgvUserRecords.CurrentRow.Cells(0).Value & "'"
         deletes(query, dgvUserRecords.CurrentRow.Cells(1).Value)
+        reloadDgv(query, dgvUserRecords)
     End Sub
     Private Sub dgvUserRecords_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvUserRecords.CellToolTipTextNeeded
         Dim dgv = DirectCast(sender, DataGridView)
@@ -143,31 +144,6 @@ Public Class frmSettings
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub CheckingUsername()
-        Try
-            con.Open()
-            Dim query As String
-            query = "SELECT Username FROM users WHERE Username = '" & txtUsername.Text & "'"
-            cmd = New MySqlCommand(query, con)
-            dr = cmd.ExecuteReader()
-            Dim count As Integer
-            count = 0
-            While dr.Read
-                count = count + 1
-            End While
-            Select Case count
-                Case 1
-                    MsgBox("Username is already exist. Please try another username!", MsgBoxStyle.Critical, "ATTENTION")
-                Case Else
-                    con.Close()
-            End Select
-        Catch ex As Exception
-            MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
-        Finally
-            dr.Close()
-            con.Close()
-        End Try
-    End Sub
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         If txtFullName.Text = "" And txtUsername.Text = "" And txtPassword.Text = "" And rdoad = "" And cmbSecretQuestion.Text = "" And txtSecretAnswer.Text = "" Then
             MsgBox("Fill up your account details", MsgBoxStyle.Critical, "ATTENTION!")
@@ -231,7 +207,6 @@ Public Class frmSettings
                 & "', '" & txtUsername.Text & "', '" & txtPassword.Text & "', '" & cmbSecretQuestion.Text _
                 & "', '" & txtSecretAnswer.Text & "', '" & rdoad & "')"
                 create(query, txtFullName.Text)
-                CheckingUsername()
             End If
             load_UserRecords()
             cleartext(gbUser)

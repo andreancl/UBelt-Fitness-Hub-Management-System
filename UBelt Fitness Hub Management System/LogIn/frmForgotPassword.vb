@@ -71,21 +71,30 @@ Public Class frmForgotPassword
     Private Sub frmForgotPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Reset()
     End Sub
+#Region "Validation"
     Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsername.KeyPress
-        If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
+        If Asc(e.KeyChar) < 65 Or Asc(e.KeyChar) > 90 And Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122 Then
+            If Asc(e.KeyChar) = 8 Then
+                e.Handled = False
+            ElseIf Asc(e.KeyChar) = 32 Then
+                e.Handled = True
+            Else
+                e.Handled = True
+            End If
         End If
     End Sub
     Private Sub txtSecretAnswer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSecretAnswer.KeyPress
-        If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
+        If Asc(e.KeyChar) < 65 Or Asc(e.KeyChar) > 90 And Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122 Then
+            If Asc(e.KeyChar) = 8 Then
+                e.Handled = False
+            ElseIf Asc(e.KeyChar) = 32 Then
+                e.Handled = True
+            Else
+                e.Handled = True
+            End If
         End If
     End Sub
-
+#End Region
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Reset()
         Me.Hide()

@@ -13,24 +13,24 @@ Module user
                 If dr("UserTypeId") = "1" Then
                     frmDashboard.lblUserName.Text = "Admin"
                     With frmDashboard
-                        .btnDashboard.Visible = True
                         .btnMembers.Visible = True
                         .btnAttendance.Visible = True
                         .btnLogHistory.Visible = True
                         .btnSettings.Visible = True
                     End With
                     frmDashboard.Show()
+                    showForm(frmMembers)
                     frmLogIn.Hide()
                 Else
                     frmDashboard.lblUserName.Text = "User"
                     With frmDashboard
-                        .btnDashboard.Visible = True
                         .btnMembers.Visible = True
                         .btnAttendance.Visible = True
                         .btnLogHistory.Visible = False
                         .btnSettings.Visible = False
                     End With
                     frmDashboard.Show()
+                    showForm(frmLogHistory)
                     frmLogIn.Hide()
                 End If
             End If

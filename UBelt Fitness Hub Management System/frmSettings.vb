@@ -187,8 +187,7 @@ Public Class frmSettings
                    & "' WHERE `UserId`='" & lblUserId.Text & "'"
                 updates(query, txtFullName.Text)
                 load_UserRecords()
-                cleartext(gbUser)
-                setup(gbUser)
+                clearcontrol(gbUser)
                 lblBIS.Text = "CREATE ACCOUNT FORM"
                 lblUserId.Text = ""
                 btnCreate.Text = "Create Account"
@@ -209,8 +208,7 @@ Public Class frmSettings
                 create(query, txtFullName.Text)
             End If
             load_UserRecords()
-            cleartext(gbUser)
-            setup(gbUser)
+            clearcontrol(gbUser)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

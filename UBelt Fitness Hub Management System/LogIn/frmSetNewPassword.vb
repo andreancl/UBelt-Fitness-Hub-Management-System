@@ -77,6 +77,7 @@ Public Class frmSetNewPassword
     Private Sub frmSetNewPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Reset()
     End Sub
+#Region "Validation"
     Private Sub frmSetNewPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnChangePassword.PerformClick()
@@ -96,6 +97,7 @@ Public Class frmSetNewPassword
             e.Handled = True
         End If
     End Sub
+#End Region
     Private Sub txtNewPassword_TextChanged(sender As Object, e As EventArgs) Handles txtNewPassword.TextChanged
         If txtNewPassword.Text = "" Then
             btnBack.Text = "BACK"

@@ -80,10 +80,10 @@
     <Compile Include="frmAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmForgotPassword.Designer.vb">
+    <Compile Include="LogIn\frmForgotPassword.Designer.vb">
       <DependentUpon>frmForgotPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmForgotPassword.vb">
+    <Compile Include="LogIn\frmForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogHistory.Designer.vb">
@@ -92,10 +92,10 @@
     <Compile Include="frmLogHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetNewPassword.Designer.vb">
+    <Compile Include="LogIn\frmSetNewPassword.Designer.vb">
       <DependentUpon>frmSetNewPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSetNewPassword.vb">
+    <Compile Include="LogIn\frmSetNewPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSettings.Designer.vb">
@@ -107,10 +107,10 @@
     <Compile Include="Modules\Functions.vb" />
     <Compile Include="Modules\Conn.vb" />
     <Compile Include="Modules\Crud.vb" />
-    <Compile Include="frmLogIn.vb">
+    <Compile Include="LogIn\frmLogIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogIn.Designer.vb">
+    <Compile Include="LogIn\frmLogIn.Designer.vb">
       <DependentUpon>frmLogIn.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +130,6 @@
       <DependentUpon>frmMonthlyMember.vb</DependentUpon>
     </Compile>
     <Compile Include="Pop-ups\frmMonthlyMember.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pop-ups\frmNewMember.Designer.vb">
-      <DependentUpon>frmNewMember.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Pop-ups\frmNewMember.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -165,13 +159,13 @@
     <EmbeddedResource Include="frmAttendance.resx">
       <DependentUpon>frmAttendance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmForgotPassword.resx">
+    <EmbeddedResource Include="LogIn\frmForgotPassword.resx">
       <DependentUpon>frmForgotPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogHistory.resx">
       <DependentUpon>frmLogHistory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogIn.resx">
+    <EmbeddedResource Include="LogIn\frmLogIn.resx">
       <DependentUpon>frmLogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
@@ -180,7 +174,7 @@
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetNewPassword.resx">
+    <EmbeddedResource Include="LogIn\frmSetNewPassword.resx">
       <DependentUpon>frmSetNewPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
@@ -188,9 +182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-ups\frmMonthlyMember.resx">
       <DependentUpon>frmMonthlyMember.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pop-ups\frmNewMember.resx">
-      <DependentUpon>frmNewMember.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

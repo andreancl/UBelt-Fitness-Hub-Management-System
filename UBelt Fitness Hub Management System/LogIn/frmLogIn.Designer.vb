@@ -25,6 +25,7 @@ Partial Class frmLogIn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogIn))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnForgotPassword = New System.Windows.Forms.Button()
         Me.chckboxShowPassword = New System.Windows.Forms.CheckBox()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
@@ -33,7 +34,6 @@ Partial Class frmLogIn
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Panel = New System.Windows.Forms.Panel()
-        Me.btnForgotPassword = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -67,6 +67,21 @@ Partial Class frmLogIn
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Log-in Details:"
+        '
+        'btnForgotPassword
+        '
+        Me.btnForgotPassword.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnForgotPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnForgotPassword.ForeColor = System.Drawing.Color.Black
+        Me.btnForgotPassword.Location = New System.Drawing.Point(168, 239)
+        Me.btnForgotPassword.Name = "btnForgotPassword"
+        Me.btnForgotPassword.Size = New System.Drawing.Size(277, 30)
+        Me.btnForgotPassword.TabIndex = 3
+        Me.btnForgotPassword.TabStop = False
+        Me.btnForgotPassword.Text = "FORGOT PASSWORD ?"
+        Me.btnForgotPassword.UseVisualStyleBackColor = False
         '
         'chckboxShowPassword
         '
@@ -164,21 +179,6 @@ Partial Class frmLogIn
         Me.Panel.Name = "Panel"
         Me.Panel.Size = New System.Drawing.Size(549, 104)
         Me.Panel.TabIndex = 2
-        '
-        'btnForgotPassword
-        '
-        Me.btnForgotPassword.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnForgotPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnForgotPassword.ForeColor = System.Drawing.Color.Black
-        Me.btnForgotPassword.Location = New System.Drawing.Point(168, 239)
-        Me.btnForgotPassword.Name = "btnForgotPassword"
-        Me.btnForgotPassword.Size = New System.Drawing.Size(277, 30)
-        Me.btnForgotPassword.TabIndex = 3
-        Me.btnForgotPassword.TabStop = False
-        Me.btnForgotPassword.Text = "FORGOT PASSWORD ?"
-        Me.btnForgotPassword.UseVisualStyleBackColor = False
         '
         'frmLogIn
         '

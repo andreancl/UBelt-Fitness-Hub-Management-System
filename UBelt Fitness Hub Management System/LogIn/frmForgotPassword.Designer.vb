@@ -114,7 +114,7 @@ Partial Class frmForgotPassword
         Me.cmbSecretQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSecretQuestion.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSecretQuestion.FormattingEnabled = True
-        Me.cmbSecretQuestion.Items.AddRange(New Object() {"", "What is your favorite color?", "What is your contact number?", "When is your birthday?", "What is love for you?", "Where were you born ?", "What is the meaning of life?", "What is your gender?", "What is your civil status in life?", "What is your dream in life?", "What makes you happy?", "What makes you sad?", "What makes you mad?", "What is your job?", "What is your favorite song?", "What is your favorite band?", "Who is your favorite singer?"})
+        Me.cmbSecretQuestion.Items.AddRange(New Object() {"", "What is the name of your first pet?", "What is your favorite color?", "In what city were you born?", "What was your father middle name?", "What was your childhood nickname?", "What is your oldest sibling name?"})
         Me.cmbSecretQuestion.Location = New System.Drawing.Point(174, 88)
         Me.cmbSecretQuestion.MaxLength = 40
         Me.cmbSecretQuestion.Name = "cmbSecretQuestion"

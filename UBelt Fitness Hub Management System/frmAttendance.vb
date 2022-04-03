@@ -41,7 +41,7 @@
         & "', '" & frmdailyMember.dgvMemberList.CurrentRow.Cells(7).Value & "','" & logdate & "', '" & login & "')"
         create(query, txtDailyFullName.Text)
         load_MembersInfoDaily()
-            cleartext(gbDaily)
+            clearcontrol(gbDaily)
         Catch ex As Exception
             MsgBox("This action cannot be performed.", MsgBoxStyle.Information)
         End Try
@@ -53,7 +53,7 @@
         & dgvDailyMembersRecord.CurrentRow.Cells(0).Value & "'"
         updates(query, dgvDailyMembersRecord.CurrentRow.Cells(1).Value)
         load_MembersInfoDaily()
-        cleartext(gbDaily)
+        clearcontrol(gbDaily)
     End Sub
     Private Sub dgvDailyMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDailyMembersRecord.CellContentClick
         txtDailyMemberId.Text = dgvDailyMembersRecord.CurrentRow.Cells(0).Value
@@ -124,7 +124,7 @@
             & ",'" & frmMonthlyMember.dgvMemberList.CurrentRow.Cells(7).Value & "', '" & logdate & "', '" & login & "')"
             create(query, txtMonthlyFullName.Text)
             load_MembersInfoMonthly()
-            cleartext(gbMonthly)
+            clearcontrol(gbMonthly)
         Catch ex As Exception
             MsgBox("This action cannot be performed.", MsgBoxStyle.Information)
         End Try
@@ -136,7 +136,7 @@
         & dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value & "'"
         updates(query, dgvMonthlyMembersRecord.CurrentRow.Cells(1).Value)
         load_MembersInfoMonthly()
-        cleartext(gbMonthly)
+        clearcontrol(gbMonthly)
     End Sub
     Private Sub dgvMonthlyMembersRecord_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMonthlyMembersRecord.CellContentClick
         txtMonthlyMemberId.Text = dgvMonthlyMembersRecord.CurrentRow.Cells(0).Value

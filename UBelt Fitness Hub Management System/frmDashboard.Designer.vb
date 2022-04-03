@@ -26,18 +26,19 @@ Partial Class frmDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lbUBFH = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnLogHistory = New System.Windows.Forms.Button()
         Me.btnAttendance = New System.Windows.Forms.Button()
-        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnMembers = New System.Windows.Forms.Button()
-        Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblUserName = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,12 +67,7 @@ Partial Class frmDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnSettings)
-        Me.Panel1.Controls.Add(Me.btnLogHistory)
-        Me.Panel1.Controls.Add(Me.btnAttendance)
-        Me.Panel1.Controls.Add(Me.btnLogOut)
-        Me.Panel1.Controls.Add(Me.btnMembers)
-        Me.Panel1.Controls.Add(Me.btnDashboard)
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -79,6 +75,43 @@ Partial Class frmDashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(256, 749)
         Me.Panel1.TabIndex = 6
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btnLogOut)
+        Me.GroupBox1.Controls.Add(Me.btnSettings)
+        Me.GroupBox1.Controls.Add(Me.btnLogHistory)
+        Me.GroupBox1.Controls.Add(Me.btnAttendance)
+        Me.GroupBox1.Controls.Add(Me.btnMembers)
+        Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 313)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(256, 392)
+        Me.GroupBox1.TabIndex = 15
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Dashboard"
+        '
+        'btnLogOut
+        '
+        Me.btnLogOut.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLogOut.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogOut.ForeColor = System.Drawing.Color.White
+        Me.btnLogOut.Image = CType(resources.GetObject("btnLogOut.Image"), System.Drawing.Image)
+        Me.btnLogOut.Location = New System.Drawing.Point(3, 339)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
+        Me.btnLogOut.Size = New System.Drawing.Size(250, 50)
+        Me.btnLogOut.TabIndex = 20
+        Me.btnLogOut.Text = "   Log Out"
+        Me.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogOut.UseVisualStyleBackColor = False
         '
         'btnSettings
         '
@@ -91,11 +124,11 @@ Partial Class frmDashboard
         Me.btnSettings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSettings.ForeColor = System.Drawing.Color.White
         Me.btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), System.Drawing.Image)
-        Me.btnSettings.Location = New System.Drawing.Point(0, 507)
+        Me.btnSettings.Location = New System.Drawing.Point(3, 169)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
-        Me.btnSettings.Size = New System.Drawing.Size(256, 50)
-        Me.btnSettings.TabIndex = 14
+        Me.btnSettings.Size = New System.Drawing.Size(250, 50)
+        Me.btnSettings.TabIndex = 18
         Me.btnSettings.Text = "   Settings"
         Me.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -112,11 +145,11 @@ Partial Class frmDashboard
         Me.btnLogHistory.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogHistory.ForeColor = System.Drawing.Color.White
         Me.btnLogHistory.Image = CType(resources.GetObject("btnLogHistory.Image"), System.Drawing.Image)
-        Me.btnLogHistory.Location = New System.Drawing.Point(0, 457)
+        Me.btnLogHistory.Location = New System.Drawing.Point(3, 119)
         Me.btnLogHistory.Name = "btnLogHistory"
         Me.btnLogHistory.Padding = New System.Windows.Forms.Padding(6, 0, 40, 0)
-        Me.btnLogHistory.Size = New System.Drawing.Size(256, 50)
-        Me.btnLogHistory.TabIndex = 13
+        Me.btnLogHistory.Size = New System.Drawing.Size(250, 50)
+        Me.btnLogHistory.TabIndex = 17
         Me.btnLogHistory.Text = "   Log History"
         Me.btnLogHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -133,36 +166,15 @@ Partial Class frmDashboard
         Me.btnAttendance.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAttendance.ForeColor = System.Drawing.Color.White
         Me.btnAttendance.Image = CType(resources.GetObject("btnAttendance.Image"), System.Drawing.Image)
-        Me.btnAttendance.Location = New System.Drawing.Point(0, 407)
+        Me.btnAttendance.Location = New System.Drawing.Point(3, 69)
         Me.btnAttendance.Name = "btnAttendance"
         Me.btnAttendance.Padding = New System.Windows.Forms.Padding(0, 0, 50, 0)
-        Me.btnAttendance.Size = New System.Drawing.Size(256, 50)
-        Me.btnAttendance.TabIndex = 12
+        Me.btnAttendance.Size = New System.Drawing.Size(250, 50)
+        Me.btnAttendance.TabIndex = 16
         Me.btnAttendance.Text = "  Attendance"
         Me.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAttendance.UseVisualStyleBackColor = False
-        '
-        'btnLogOut
-        '
-        Me.btnLogOut.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnLogOut.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.btnLogOut.FlatAppearance.BorderSize = 0
-        Me.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogOut.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.ForeColor = System.Drawing.Color.White
-        Me.btnLogOut.Image = CType(resources.GetObject("btnLogOut.Image"), System.Drawing.Image)
-        Me.btnLogOut.Location = New System.Drawing.Point(0, 699)
-        Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
-        Me.btnLogOut.Size = New System.Drawing.Size(256, 50)
-        Me.btnLogOut.TabIndex = 7
-        Me.btnLogOut.Text = "   Log Out"
-        Me.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLogOut.UseVisualStyleBackColor = False
         '
         'btnMembers
         '
@@ -175,35 +187,15 @@ Partial Class frmDashboard
         Me.btnMembers.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMembers.ForeColor = System.Drawing.Color.White
         Me.btnMembers.Image = CType(resources.GetObject("btnMembers.Image"), System.Drawing.Image)
-        Me.btnMembers.Location = New System.Drawing.Point(0, 357)
+        Me.btnMembers.Location = New System.Drawing.Point(3, 19)
         Me.btnMembers.Name = "btnMembers"
         Me.btnMembers.Padding = New System.Windows.Forms.Padding(0, 0, 15, 0)
-        Me.btnMembers.Size = New System.Drawing.Size(256, 50)
-        Me.btnMembers.TabIndex = 3
+        Me.btnMembers.Size = New System.Drawing.Size(250, 50)
+        Me.btnMembers.TabIndex = 15
         Me.btnMembers.Text = "   Members"
         Me.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnMembers.UseVisualStyleBackColor = False
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.BackColor = System.Drawing.Color.Transparent
-        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDashboard.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.btnDashboard.FlatAppearance.BorderSize = 0
-        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboard.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.ForeColor = System.Drawing.Color.White
-        Me.btnDashboard.Image = CType(resources.GetObject("btnDashboard.Image"), System.Drawing.Image)
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 307)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(256, 50)
-        Me.btnDashboard.TabIndex = 2
-        Me.btnDashboard.Text = "   Dashboard"
-        Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'Panel4
         '
@@ -263,6 +255,7 @@ Partial Class frmDashboard
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -272,14 +265,14 @@ Partial Class frmDashboard
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents lbUBFH As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents btnLogHistory As System.Windows.Forms.Button
-    Friend WithEvents btnLogOut As System.Windows.Forms.Button
-    Friend WithEvents btnMembers As System.Windows.Forms.Button
-    Friend WithEvents btnDashboard As System.Windows.Forms.Button
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Public WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblUserName As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents btnAttendance As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents btnSettings As System.Windows.Forms.Button
+    Friend WithEvents btnLogHistory As System.Windows.Forms.Button
+    Friend WithEvents btnAttendance As System.Windows.Forms.Button
+    Friend WithEvents btnMembers As System.Windows.Forms.Button
+    Friend WithEvents btnLogOut As System.Windows.Forms.Button
 End Class

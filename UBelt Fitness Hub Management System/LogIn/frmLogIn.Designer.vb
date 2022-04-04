@@ -80,7 +80,7 @@ Partial Class frmLogIn
         Me.btnForgotPassword.Size = New System.Drawing.Size(277, 30)
         Me.btnForgotPassword.TabIndex = 3
         Me.btnForgotPassword.TabStop = False
-        Me.btnForgotPassword.Text = "FORGOT PASSWORD ?"
+        Me.btnForgotPassword.Text = "FORGOT PASSWORD"
         Me.btnForgotPassword.UseVisualStyleBackColor = False
         '
         'chckboxShowPassword

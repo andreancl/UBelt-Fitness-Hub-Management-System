@@ -29,16 +29,16 @@
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         If cmbFilter.Text = "MEMBER'S NAME" Then
-            query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name'" _
-            & ", `MembershipType` AS 'Membership Type', `Date` AS 'Date'" _
-            & ", `TimeLogIn` AS 'Time Log In', `TimeLogOut` AS 'Time Log Out'" _
-            & " FROM `daily` WHERE FullName LIKE '%" & txtSearch.Text & "%'"
+            query = "SELECT d.MemberId, d.FullName, d.MembershipType, d.Date, d.TimeLogIn, d.TimeLogOut" _
+            & " FROM daily AS d WHERE d.FullName LIKE '%" & txtSearch.Text & "%'" _
+            & " UNION ALL SELECT m.MemberId, m.FullName, m.MembershipType, m.Date, m.TimeLogIn, m.TimeLogOut" _
+            & " FROM monthly AS m WHERE m.FullName LIKE '%" & txtSearch.Text & "%'"
             reloadDgv(query, dgvMembersRecord)
-        Else : cmbFilter.Text = "MEMBER'S NAME"
-            query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name'" _
-           & ", `MembershipType` AS 'Membership Type', `Date` AS 'Date'" _
-           & ", `TimeLogIn` AS 'Time Log In', `TimeLogOut` AS 'Time Log Out'" _
-           & " FROM `monthly` WHERE FullName LIKE '%" & txtSearch.Text & "%'"
+        Else : cmbFilter.Text = "MEMBERSHIP TYPE"
+            query = "SELECT d.MemberId, d.FullName, d.MembershipType, d.Date, d.TimeLogIn, d.TimeLogOut" _
+            & " FROM daily AS d WHERE d.MembershipType LIKE '%" & txtSearch.Text & "%'" _
+            & " UNION ALL SELECT m.MemberId, m.FullName, m.MembershipType, m.Date, m.TimeLogIn, m.TimeLogOut" _
+            & " FROM monthly AS m WHERE m.MembershipType LIKE '%" & txtSearch.Text & "%'"
             reloadDgv(query, dgvMembersRecord)
         End If
     End Sub

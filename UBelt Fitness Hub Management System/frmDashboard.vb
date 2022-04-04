@@ -26,6 +26,8 @@
             Reset()
             frmLogIn.Show()
             frmLogIn.Reset()
+        Else
+            btnLogOut.Text = "   Log Out"
         End If
     End Sub
 End Class

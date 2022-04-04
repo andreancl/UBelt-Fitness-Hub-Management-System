@@ -23,19 +23,18 @@ Partial Class frmSettings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSettings))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tpAccount = New System.Windows.Forms.TabPage()
         Me.tcAccountSettings = New System.Windows.Forms.TabControl()
         Me.tpAccountDetails = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblUserId = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblBIS = New System.Windows.Forms.Label()
         Me.gbUser = New System.Windows.Forms.GroupBox()
-        Me.btnCreate = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.chkSecretAnswer = New System.Windows.Forms.CheckBox()
         Me.txtSecretAnswer = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -72,7 +71,6 @@ Partial Class frmSettings
         Me.tpAccount.SuspendLayout()
         Me.tcAccountSettings.SuspendLayout()
         Me.tpAccountDetails.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.gbUser.SuspendLayout()
         CType(Me.dgvUserRecords, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcSettings.SuspendLayout()
@@ -107,7 +105,7 @@ Partial Class frmSettings
         'tpAccountDetails
         '
         Me.tpAccountDetails.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.tpAccountDetails.Controls.Add(Me.Panel1)
+        Me.tpAccountDetails.Controls.Add(Me.lblUserId)
         Me.tpAccountDetails.Controls.Add(Me.gbUser)
         Me.tpAccountDetails.Controls.Add(Me.dgvUserRecords)
         Me.tpAccountDetails.Location = New System.Drawing.Point(4, 32)
@@ -117,51 +115,21 @@ Partial Class frmSettings
         Me.tpAccountDetails.TabIndex = 0
         Me.tpAccountDetails.Text = "Account Details"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.lblUserId)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.lblBIS)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(493, 77)
-        Me.Panel1.TabIndex = 91
-        '
         'lblUserId
         '
         Me.lblUserId.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblUserId.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserId.Location = New System.Drawing.Point(315, 50)
+        Me.lblUserId.Location = New System.Drawing.Point(20, 38)
         Me.lblUserId.Name = "lblUserId"
         Me.lblUserId.Size = New System.Drawing.Size(100, 25)
         Me.lblUserId.TabIndex = 5
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(6, 51)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(291, 19)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Please fill in this form to create an account."
-        '
-        'lblBIS
-        '
-        Me.lblBIS.AutoSize = True
-        Me.lblBIS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblBIS.Font = New System.Drawing.Font("Calibri", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBIS.Location = New System.Drawing.Point(0, 8)
-        Me.lblBIS.Name = "lblBIS"
-        Me.lblBIS.Size = New System.Drawing.Size(379, 42)
-        Me.lblBIS.TabIndex = 1
-        Me.lblBIS.Text = "CREATE ACCOUNT FORM"
-        '
         'gbUser
         '
-        Me.gbUser.Controls.Add(Me.btnCreate)
+        Me.gbUser.Controls.Add(Me.btnClear)
+        Me.gbUser.Controls.Add(Me.btnUpdate)
+        Me.gbUser.Controls.Add(Me.btnDelete)
+        Me.gbUser.Controls.Add(Me.btnSave)
         Me.gbUser.Controls.Add(Me.chkSecretAnswer)
         Me.gbUser.Controls.Add(Me.txtSecretAnswer)
         Me.gbUser.Controls.Add(Me.Label6)
@@ -177,27 +145,63 @@ Partial Class frmSettings
         Me.gbUser.Controls.Add(Me.Label3)
         Me.gbUser.Controls.Add(Me.Label1)
         Me.gbUser.Controls.Add(Me.Label12)
-        Me.gbUser.Location = New System.Drawing.Point(6, 79)
+        Me.gbUser.Location = New System.Drawing.Point(24, 51)
         Me.gbUser.Name = "gbUser"
         Me.gbUser.Size = New System.Drawing.Size(487, 355)
         Me.gbUser.TabIndex = 90
         Me.gbUser.TabStop = False
         '
-        'btnCreate
+        'btnClear
         '
-        Me.btnCreate.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCreate.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCreate.ForeColor = System.Drawing.Color.White
-        Me.btnCreate.Image = CType(resources.GetObject("btnCreate.Image"), System.Drawing.Image)
-        Me.btnCreate.Location = New System.Drawing.Point(153, 304)
-        Me.btnCreate.Name = "btnCreate"
-        Me.btnCreate.Size = New System.Drawing.Size(186, 39)
-        Me.btnCreate.TabIndex = 55
-        Me.btnCreate.Text = "  Create Account"
-        Me.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCreate.UseVisualStyleBackColor = True
+        Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.Location = New System.Drawing.Point(356, 307)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 29)
+        Me.btnClear.TabIndex = 158
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(159, 307)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 29)
+        Me.btnUpdate.TabIndex = 157
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(57, 307)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 29)
+        Me.btnDelete.TabIndex = 156
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnSave
+        '
+        Me.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(258, 307)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 29)
+        Me.btnSave.TabIndex = 155
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'chkSecretAnswer
         '
@@ -218,6 +222,7 @@ Partial Class frmSettings
         Me.txtSecretAnswer.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSecretAnswer.Location = New System.Drawing.Point(174, 231)
         Me.txtSecretAnswer.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txtSecretAnswer.MaxLength = 20
         Me.txtSecretAnswer.Name = "txtSecretAnswer"
         Me.txtSecretAnswer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtSecretAnswer.Size = New System.Drawing.Size(294, 27)
@@ -241,7 +246,7 @@ Partial Class frmSettings
         Me.cmbSecretQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSecretQuestion.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSecretQuestion.FormattingEnabled = True
-        Me.cmbSecretQuestion.Items.AddRange(New Object() {"", "What is your favorite color?", "What is your contact number?", "When is your birthday?", "What is love for you?", "Where were you born ?", "What is the meaning of life?", "What is your gender?", "What is your civil status in life?", "What is your dream in life?", "What makes you happy?", "What makes you sad?", "What makes you mad?", "What is your job?", "What is your favorite song?", "What is your favorite band?", "Who is your favorite singer?"})
+        Me.cmbSecretQuestion.Items.AddRange(New Object() {"", "What is the name of your first pet?", "What is your favorite color?", "In what city were you born?", "What was your father middle name?", "What was your childhood nickname?", "What is your oldest sibling name?"})
         Me.cmbSecretQuestion.Location = New System.Drawing.Point(174, 196)
         Me.cmbSecretQuestion.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.cmbSecretQuestion.Name = "cmbSecretQuestion"
@@ -321,6 +326,7 @@ Partial Class frmSettings
         Me.txtPassword.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.Location = New System.Drawing.Point(174, 95)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txtPassword.MaxLength = 12
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(294, 27)
@@ -331,6 +337,7 @@ Partial Class frmSettings
         Me.txtFullName.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFullName.Location = New System.Drawing.Point(174, 25)
         Me.txtFullName.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txtFullName.MaxLength = 30
         Me.txtFullName.Name = "txtFullName"
         Me.txtFullName.Size = New System.Drawing.Size(294, 27)
         Me.txtFullName.TabIndex = 31
@@ -340,6 +347,7 @@ Partial Class frmSettings
         Me.txtUsername.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.Location = New System.Drawing.Point(174, 60)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txtUsername.MaxLength = 12
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(294, 27)
         Me.txtUsername.TabIndex = 105
@@ -579,8 +587,6 @@ Partial Class frmSettings
         Me.tpAccount.ResumeLayout(False)
         Me.tcAccountSettings.ResumeLayout(False)
         Me.tpAccountDetails.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.gbUser.ResumeLayout(False)
         Me.gbUser.PerformLayout()
         CType(Me.dgvUserRecords, System.ComponentModel.ISupportInitialize).EndInit()
@@ -615,12 +621,8 @@ Partial Class frmSettings
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents tcAccountSettings As System.Windows.Forms.TabControl
     Friend WithEvents tpAccountDetails As System.Windows.Forms.TabPage
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents lblUserId As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents lblBIS As System.Windows.Forms.Label
     Friend WithEvents gbUser As System.Windows.Forms.GroupBox
-    Friend WithEvents btnCreate As System.Windows.Forms.Button
     Friend WithEvents chkSecretAnswer As System.Windows.Forms.CheckBox
     Friend WithEvents txtSecretAnswer As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -637,4 +639,8 @@ Partial Class frmSettings
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents dgvUserRecords As System.Windows.Forms.DataGridView
+    Friend WithEvents btnClear As System.Windows.Forms.Button
+    Friend WithEvents btnUpdate As System.Windows.Forms.Button
+    Friend WithEvents btnDelete As System.Windows.Forms.Button
+    Friend WithEvents btnSave As System.Windows.Forms.Button
 End Class

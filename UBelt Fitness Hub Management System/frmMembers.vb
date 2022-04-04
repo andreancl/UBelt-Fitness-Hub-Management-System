@@ -21,7 +21,8 @@ Public Class frmMembers
     Private Sub txtSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBox.TextChanged
         query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name', `Sex` AS 'Sex'" _
         & ", round( ((DATEDIFF( NOW( ) ,  `Birthdate` ) /12) /31))  AS 'Age', `ContactNumber` AS 'Contact Number'" _
-        & ", `Address` AS 'Address', `MembershipType` AS 'Membership Type', `DateRegistered` AS 'Date Registered' FROM `members` WHERE FullName LIKE '%" & txtSearchBox.Text & "%'"
+        & ", `Address` AS 'Address', `MembershipType` AS 'Membership Type', `DateRegistered` AS 'Date Registered'" _
+        & " FROM `members` WHERE FullName LIKE '%" & txtSearchBox.Text & "%'"
         reloadDgv(query, dgvMembersRecord)
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -32,8 +33,6 @@ Public Class frmMembers
         lblMemId.Text = ""
     End Sub
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim ContactNo As Integer
-        Int32.TryParse(txtContactNo.Text, ContactNo)
         query = "SELECT * FROM `members` WHERE `MemberId`='" & lblMemId.Text & "'"
         reloadtxt(query)
 
@@ -45,7 +44,7 @@ Public Class frmMembers
 
         query = "UPDATE `members` SET  `FullName`='" & txtFullName.Text _
            & "', `Sex`='" & rdo & "', `Birthdate`='" & Format(dtpBirthdate.Value, "yyyy-MM-dd") _
-           & "', `ContactNumber`='" & ContactNo & "', `Address`='" & txtAddress.Text _
+           & "', `ContactNumber`='" & txtContactNo.Text & "', `Address`='" & txtAddress.Text _
            & "', `MembershipType`='" & cmbMembership.Text & "' WHERE `MemberId`='" & lblMemId.Text & "'"
         updates(query, txtFullName.Text)
         load_MembersInfo()
@@ -102,8 +101,6 @@ Public Class frmMembers
     End Sub
     Private Sub RegMember()
         Try
-            Dim ContactNo As Integer
-            Int32.TryParse(txtContactNo.Text, ContactNo)
             Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
             Dim member_id = "MEM" + datetime_now
             Dim datereg As String = String.Format("{0:ddMMyyyhh}", Date.Now)
@@ -117,7 +114,7 @@ Public Class frmMembers
             query = "INSERT INTO `members` (`MemberId`, `FullName`, `Sex`, `Birthdate`" _
                 & ", `ContactNumber`, `Address`, `MembershipType`, `DateRegistered`) VALUES ('" & member_id & "'" _
                 & ", '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text & "'" _
-                & ", '" & ContactNo & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "'" _
+                & ", '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "'" _
                 & ", '" & datereg & "')"
             create(query, txtFullName.Text)
             load_MembersInfo()

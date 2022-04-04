@@ -26,5 +26,21 @@
         dgvMembersRecord.DrawToBitmap(bm, New Rectangle(30, 30, Me.dgvMembersRecord.Width, Me.dgvMembersRecord.Height))
         e.Graphics.DrawImage(bm, 0, 0)
     End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        If cmbFilter.Text = "MEMBER'S NAME" Then
+            query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name'" _
+            & ", `MembershipType` AS 'Membership Type', `Date` AS 'Date'" _
+            & ", `TimeLogIn` AS 'Time Log In', `TimeLogOut` AS 'Time Log Out'" _
+            & " FROM `daily` WHERE FullName LIKE '%" & txtSearch.Text & "%'"
+            reloadDgv(query, dgvMembersRecord)
+        Else : cmbFilter.Text = "MEMBER'S NAME"
+            query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name'" _
+           & ", `MembershipType` AS 'Membership Type', `Date` AS 'Date'" _
+           & ", `TimeLogIn` AS 'Time Log In', `TimeLogOut` AS 'Time Log Out'" _
+           & " FROM `monthly` WHERE FullName LIKE '%" & txtSearch.Text & "%'"
+            reloadDgv(query, dgvMembersRecord)
+        End If
+    End Sub
 End Class
 

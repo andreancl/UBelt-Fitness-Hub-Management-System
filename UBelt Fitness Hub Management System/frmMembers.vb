@@ -1,9 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 Public Class frmMembers
     Dim rdo As String
     Public con As MySqlConnection = mysqldb()
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_MembersInfo()
+        clearcontrol(GroupBox1)
 
         dgvMembersRecord.RowTemplate.Height = 40
         dgvMembersRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
@@ -77,7 +79,7 @@ Public Class frmMembers
     Private Sub CheckingName()
         Try
             con.Open()
-            query = "SELECT FullName FROM members WHERE FullName = '" & txtFullName.Text & "'"
+            query = "SELECT MemberId FROM members WHERE MemberId = '" & lblMemId.Text & "'"
             cmd = New MySqlCommand(query, con)
             dr = cmd.ExecuteReader()
             Dim count As Integer
@@ -103,7 +105,7 @@ Public Class frmMembers
         Try
             Dim datetime_now As String = String.Format("{0:ddMMyyyhhss}", DateTime.Now)
             Dim member_id = "MEM" + datetime_now
-            Dim datereg As String = String.Format("{0:ddMMyyyhh}", Date.Now)
+            Dim datereg As String = String.Format("{0:yyyy-MM-dd}", Date.Now)
 
             If rdoMale.Checked = True Then
                 rdo = "Male"
@@ -112,10 +114,11 @@ Public Class frmMembers
             End If
 
             query = "INSERT INTO `members` (`MemberId`, `FullName`, `Sex`, `Birthdate`" _
-                & ", `ContactNumber`, `Address`, `MembershipType`, `DateRegistered`) VALUES ('" & member_id & "'" _
-                & ", '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text & "'" _
-                & ", '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text & "'" _
-                & ", '" & datereg & "')"
+                & ", `ContactNumber`, `Address`, `MembershipType`, `DateRegistered`) VALUES ('" & member_id _
+                & "', '" & txtFullName.Text & "', '" & rdo & "', '" & dtpBirthdate.Text _
+                & "', '" & txtContactNo.Text & "', '" & txtAddress.Text & "', '" & cmbMembership.Text _
+                & "', '" & datereg & "')"
+
             create(query, txtFullName.Text)
             load_MembersInfo()
             clearcontrol(gbMembers)
@@ -141,6 +144,7 @@ Public Class frmMembers
                 txtContactNo.Text = dt.Rows(0).Item("ContactNumber")
                 txtAddress.Text = dt.Rows(0).Item("Address")
                 cmbMembership.Text = dt.Rows(0).Item("MembershipType")
+
                 If dt.Rows(0).Item("Sex") = "Male" Then
                     rdoMale.Checked = True
                 Else
@@ -180,4 +184,37 @@ Public Class frmMembers
         End If
     End Sub
 #End Region
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            con.Open()
+            query = "SELECT `MemberId` AS 'Member ID',`FullName` AS 'Full Name', `Sex` AS 'Sex'" _
+            & ", round( ((DATEDIFF( NOW( ) ,  `Birthdate` ) /12) /31))  AS 'Age', `ContactNumber` AS 'Contact Number'" _
+            & ", `Address` AS 'Address', `MembershipType` AS 'Membership Type', `DateRegistered` AS 'Date Registered'" _
+            & " FROM `members` WHERE DateRegistered BETWEEN '" & dtpStart.Text & "' AND '" & dtpEnd.Text & "'"
+            cmd = New MySqlCommand(query, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+            dgvMembersRecord.DataSource = ds.Tables(0)
+            reloadDgv(query, dgvMembersRecord)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        PrintDocument1.DefaultPageSettings.Landscape = True
+        PrintPreviewDialog1.ShowDialog()
+        PrintDocument1.Print()
+    End Sub
+    Private Sub PrintDocument1_PrintPage_1(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim bm As New Bitmap(Me.dgvMembersRecord.Width, Me.dgvMembersRecord.Height)
+        dgvMembersRecord.DrawToBitmap(bm, New Rectangle(30, 30, Me.dgvMembersRecord.Width, Me.dgvMembersRecord.Height))
+        e.Graphics.DrawImage(bm, 0, 0)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        clearcontrol(GroupBox1)
+        load_MembersInfo()
+    End Sub
 End Class

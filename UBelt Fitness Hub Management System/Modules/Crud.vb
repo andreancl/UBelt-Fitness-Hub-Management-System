@@ -5,6 +5,7 @@ Module crud
     Public da As New MySqlDataAdapter
     Public dr As MySqlDataReader
     Public dt As New DataTable
+    Public ds As New DataSet
     Public query As String
     Public result As String
     

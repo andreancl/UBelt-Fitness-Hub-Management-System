@@ -90,7 +90,7 @@ Partial Class frmAttendance
         Me.tcMembership.Controls.Add(Me.tpDaily)
         Me.tcMembership.Controls.Add(Me.tpMonthly)
         Me.tcMembership.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tcMembership.Location = New System.Drawing.Point(79, 95)
+        Me.tcMembership.Location = New System.Drawing.Point(79, 96)
         Me.tcMembership.Name = "tcMembership"
         Me.tcMembership.SelectedIndex = 0
         Me.tcMembership.Size = New System.Drawing.Size(951, 518)
